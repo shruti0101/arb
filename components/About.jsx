@@ -2,30 +2,92 @@
 
 import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
 
+import "swiper/css";
+import "swiper/css/effect-fade";
 export default function AboutSection() {
+
+
+const gallery = [
+  "/test3.avif",
+  "/test2.jpg",
+  "/test3.png",
+  "/test4.jfif",
+  "/test6.webp",
+  "/test5.jpg"
+];
+
+
+
+
+
   return (
-    <section className="relative overflow-hidden bg-white py-10">
+    <section className="relative overflow-hidden bg-white py-17">
       {/* Background Blur */}
       <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-blue-600/10 blur-[150px]" />
       <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-[150px]" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-20 px-6 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-20 px-3 lg:grid-cols-2">
         {/* Left Image */}
 
         <div className="relative">
           {/* Background Card */}
           <div className="absolute -left-6 -top-6 h-full w-full rounded-3xl border border-blue-500/20 bg-[#CC1C15]/5 backdrop-blur-xl" />
 
-          <div className="relative overflow-hidden rounded-3xl border border-white/10">
-            <Image
-              src="/test3.avif"
-              alt="ARB Bearings"
-              width={650}
-              height={700}
-              className="h-[620px] w-full object-cover transition duration-700 hover:scale-105"
-            />
-          </div>
+    <div className="relative">
+
+  {/* Background Card */}
+
+  <div className="absolute -left-6 -top-6 h-full w-full rounded-3xl border border-blue-500/20 bg-[#CC1C15]/5 backdrop-blur-xl" />
+
+  <div className="relative overflow-hidden rounded-3xl border border-white/10">
+
+    <Swiper
+      modules={[Autoplay, EffectFade]}
+      effect="slide"
+      loop
+      speed={1000}
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+      }}
+      className="h-[620px]"
+    >
+      {gallery.map((image, index) => (
+        <SwiperSlide key={index}>
+
+          <Image
+            src={image}
+            alt={`ARB Bearings ${index + 1}`}
+            width={650}
+            height={700}
+            className="h-[620px] w-full object-contain"
+          />
+
+        </SwiperSlide>
+      ))}
+
+    </Swiper>
+
+  </div>
+
+  {/* Floating Experience Card */}
+
+  <div className="absolute -bottom-10 left-10 z-20 rounded-2xl border border-blue-500/20 bg-[#0d2036]/95 px-8 py-6 shadow-[0_20px_60px_rgba(0,0,0,.45)] backdrop-blur-xl">
+
+    <h3 className="text-5xl font-extrabold text-white">
+      70+
+    </h3>
+
+    <p className="mt-2 text-sm text-gray-300">
+      Years of Engineering Excellence
+    </p>
+
+  </div>
+
+</div>
 
           {/* Floating Experience Card */}
 

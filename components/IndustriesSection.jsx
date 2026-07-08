@@ -34,14 +34,14 @@ const industries = [
 
 export default function IndustriesSection() {
   return (
-    <section className="bg-[#061322] py-10">
+    <section className="bg-[#EDF4FE] py-10">
       <div className="max-w-7xl mx-auto ">
 
-        <span className="text-blue-400 uppercase tracking-[4px] text-sm font-semibold">
+        <span className="text-[#D9251C] uppercase tracking-[4px] text-sm font-semibold">
           Industries We Serve
         </span>
 
-        <h2 className="text-5xl font-bold text-white mt-3 mb-12">
+        <h2 className="text-5xl font-bold text-[#27176D] mt-3 mb-12">
           Powering Industries Worldwide
         </h2>
 

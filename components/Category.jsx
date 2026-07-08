@@ -101,7 +101,7 @@ export default function ProductCategories() {
 
                 <Link
                   href="#"
-                  className="inline-flex items-center gap-2 mt-5 font-medium text-blue-700 hover:text-blue-900"
+                  className="inline-flex items-center gap-2 mt-5 font-medium text-red-700 hover:text-red-800"
                 >
                   View More
                   <ArrowRight size={16} />

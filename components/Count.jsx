@@ -47,11 +47,11 @@ export default function StatsSection() {
   });
 
   return (
-    <section style={{backgroundImage:"url(/bgcount.webp)"}} className="bg-center py-15">
+    <section style={{backgroundImage:"url(/count.avif)"}} className="bg-center bg-cover bg-fixed py-20">
 
       <div
         ref={ref}
-        className="max-w-6xl mx-auto border border-[#17314d] rounded-xl bg-[#081829]/80 overflow-hidden"
+        className="max-w-6xl mx-auto border border-[#17314d] rounded-xl bg-[#081829]/90 overflow-hidden"
       >
         <div className="grid lg:grid-cols-4 md:grid-cols-2">
 
@@ -81,7 +81,7 @@ export default function StatsSection() {
 
                 {/* Content */}
                 <div>
-                  <h3 className="text-[48px] leading-none font-bold text-[#1f7dff]">
+                  <h3 className="text-[48px] leading-none font-bold text-white">
                     {inView ? (
                       <CountUp
                         end={item.value}

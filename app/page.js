@@ -9,6 +9,9 @@ import Category from "@/components/Category";
 import Timeline from "@/components/Timeline";
 import Excellence from "@/components/Excellence";
 import Manufacturing from "@/components/Manufacture";
+import Clients from "@/components/Clients";
+import Testimonials from "@/components/Testimonial";
+import AboutRussia from "@/components/AboutRussia";
 export default function Home() {
   return (
 <div>
@@ -16,15 +19,17 @@ export default function Home() {
 <Hero/>
 <About/>
   <ProductsSlider/>
-
-    <Count/>
+<Clients/>
+  
   {/* <Process/> */}
   <IndustriesSection/>
-
+<AboutRussia/>
   <Category/>
   <Timeline/>
   <Excellence/>
+    <Count/>
   <Manufacturing/>
+  <Testimonials/>
 
 </div>
   );

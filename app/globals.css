@@ -75,3 +75,39 @@ body {
     transform: rotateY(0deg) rotateX(0deg) translateY(0px) scale(1);
   }
 }
+
+
+
+
+
+
+
+
+
+
+.testimonialSwiper {
+  padding-bottom: 70px;
+}
+
+.testimonialSwiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #d1d5db;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.testimonialSwiper .swiper-pagination-bullet-active {
+  width: 32px;
+  border-radius: 9999px;
+  background: #28186C;
+}
+
+.testimonialSwiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.testimonialSwiper .swiper-slide > div {
+  width: 100%;
+}

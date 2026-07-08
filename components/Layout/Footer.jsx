@@ -1,369 +1,249 @@
 "use client";
-
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Phone,
-  Mail,
-  MapPin,
-} from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
-
-const quickLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Mark Compressor", href: "/mark-compressor" },
-  { name: "Chicago Pneumatic", href: "/chicago-pneumatic" },
-  { name: "Blogs", href: "/our-blogs" },
-  { name: "Contact Us", href: "/contact-us" },
-];
-
-const services = [
-  {
-    name: "AMC Service",
-    href: "/amc-service",
-  },
-  {
-    name: "Air Audit Services",
-    href: "/air-audit-service",
-  },
-  {
-    name: "Engineering Consultancy",
-    href: "/engineering-consultancy",
-  },
-  {
-    name: "Wastewater Engineering",
-    href: "/wastewater-engineering",
-  },
-  {
-    name: "Turnkey Project",
-    href: "/turnkey-project",
-  },
-];
+import { Phone, MapPin, Mail, Facebook, Instagram } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const pathname = usePathname();
+  const adminLayout = pathname.startsWith("/admin")
+  if (adminLayout) return null;
+
   return (
-    <footer className="relative mt-32 overflow-hidden bg-[#031321] text-white">
+    <footer className="relative text-white pt-10 pb-5 overflow-hidden">
+      {/* BACKGROUND IMAGE */}
+      <div
+        className="absolute inset-0 -z-20 bg-cover  bg-center"
+        style={{ backgroundImage: "url('/20250507130744862683.webp')" }}
+        aria-hidden="true"
+      />
 
-      {/* Background */}
-      <div className="absolute inset-0">
+      {/* DARK OVERLAY */}
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.5) 30%) ",
+        }}
+        aria-hidden="true"
+      />
 
-        <div className="absolute -left-32 top-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[160px]" />
+      {/* TOP ACCENT */}
+      <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-red-600 to-red-600" />
 
-        <div className="absolute right-0 bottom-0 h-[550px] w-[550px] rounded-full bg-sky-500/10 blur-[180px]" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+          {/* BRAND */}
+          <div>
+            <Image
+              src="/logo.png"
+              width={270}
+              height={250}
+              alt="Mr. Dates"
+              className="object-cover"
+            />
 
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div className="h-full w-full bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:70px_70px]" />
-        </div>
-
-      </div>
-
-  
+            <p className="leading-relaxed text-sm text-white mt-4">
+             As a trusted bearing manufacturer, ARB Bearings is committed to delivering products that meet the highest standards of quality, precision, and reliability. Every bearing undergoes rigorous testing and inspection throughout 
+            </p>
+          </div>
 
 
-      {/* Main Footer */}
 
-      <div className="relative -mt-10 pb-20">
 
-        <div className="max-w-7xl mx-auto px-6">
 
-          <div className="grid gap-14 lg:grid-cols-12">
 
-            {/* Company */}
+          {/* QUICK LINKS */}
+          <div>
+            <h3 className="font-serif font-semibold text-xl mb-4">
+              Quick Links
+            </h3>
+            <ul className="space-y-3 text-sm  tracking-wider">
+              {[
+                ["Home", "/"],
+                ["About Us", "/about"],
+                ["Articles", "/blogs"],
+                ["Contact Us", "/contact"],
+                ["Products", "/products"],
+                ["Shipping Policy", "/shipping-policy"],
+                ["Return & Refund Policy", "/return-refund-policy"],
+                ["Sitemap", "/sitemap"],
+              ].map(([label, href]) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="hover:text-red-600 hover:underline underline-offset-4 decoration-red-600"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            <div className="lg:col-span-5">
 
-              <Image
-                src="/logofooter-removebg-preview.png"
-                width={230}
-                height={80}
-                alt="Logo"
+
+
+
+
+          {/* PRODUCTS */}
+          <div>
+            <h3 className="font-serif font-semibold text-xl mb-4">
+              Our Products
+            </h3>
+            <ul className="space-y-3 text-sm tracking-wider">
+              {[
+                { name: "ceramic bearing", link: "#" },
+                { name: "ball bearing", link: "#" },
+                { name: "taper bearing", link: "#" },
+                { name: "ceramic bearing", link: "#" },
+                { name: "ball bearing", link: "#" },
+                { name: "taper bearing", link: "#" },
+                { name: "ceramic bearing", link: "#" },
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.link}
+                    className="hover:text-red-600 hover:underline underline-offset-4 decoration-red-600"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+
+
+
+          {/* CONTACT */}
+          <div>
+            <h3 className="font-serif font-semibold text-xl mb-4">
+              Contact Us
+            </h3>
+
+            <div className="space-y-4 text-sm">
+              {/* ADDRESS */}
+              <div className="flex gap-3 items-start">
+                <MapPin className="w-5 h-5 text-red-600 mt-0.5 shrink-0" />
+                <p className="leading-relaxed">
+                 H-22, Udyog Nagar, New Delhi 110041, India
+
+                </p>
+              </div>
+
+              {/* PHONE */}
+              <div className="flex gap-3 items-center">
+                <Phone className="w-5 h-5 text-red-600 shrink-0" />
+                <a
+                  href="tel:+917065650411"
+                  className="hover:text-red-600 hover:underline underline-offset-4 decoration-red-600"
+                >
+                  +(91)-(11)-41440071, 45093933
+                </a>
+              </div>
+
+            
+
+              {/* EMAILS */}
+              <div className="flex gap-3 items-start">
+                <Mail className="w-5 h-5 text-red-600 mt-0.5 shrink-0" />
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="mailto:sales@arb-bearings.com"
+                    className="hover:text-red-600 hover:underline underline-offset-4 decoration-red-600"
+                  >
+                   sales@arb-bearings.com
+                  </a>
+                  <a
+                    href="mailto:marketing@arb-bearings.com"
+                    className="hover:text-red-600 hover:underline underline-offset-4 decoration-red-600"
+                  >
+                    marketing@arb-bearings.com
+                  </a>
+
+                   <a
+                    href="mailto:export@arb-bearings.com"
+                    className="hover:text-red-600 hover:underline underline-offset-4 decoration-red-600"
+                  >
+                    export@arb-bearings.com
+                  </a>
+
+                   <a
+                    href="mailto:oem@arb-bearings.com"
+                    className="hover:text-red-600 hover:underline underline-offset-4 decoration-red-600"
+                  >
+                     oem@arb-bearings.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+         
+          </div>
+
+          <div>
+            <h3 className="text-xl font-serif text-white font-semibold mb-3">
+              Trust Elite Certificate
+            </h3>
+            <p className="text-sm text-white leading-relaxed mb-3">
+              We are proud to present the TrustElite Certificate of Excellence to Mr. Dates, recognizing their commitment to exceptional customer service, outstanding business practices, and a dedication to building trust with their customers            </p>
+
+            <div className="flex justify-center md:justify-end">
+              <img
+                src="https://res.cloudinary.com/dzbkxqqo9/image/upload/v1759726401/trustseal_vltgii.webp"
+                alt="Trust Elite"
+                className="w-28 h-28 object-contain cursor-pointer hover:scale-105 transition"
+                onClick={() => setIsModalOpen(true)}
               />
 
-              <p className="mt-8 max-w-md leading-8 text-slate-300">
-                Leading Manufacturer, Trader, Exporter & Importer of
-                Air Compressors, Air Dryers, Air Line Filters,
-                Drain Valves and Industrial Filtration Solutions.
-              </p>
-
-              <div className="mt-10 flex gap-4">
-
-                <a
-                  href="tel:+919717159766"
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 transition hover:bg-cyan-500"
+              {isModalOpen && (
+                <div
+                  className="fixed inset-0 backdrop-blur-md bg-white/10 flex items-center mt-20 justify-center z-9999999"
+                  onClick={() => setIsModalOpen(false)}
                 >
-                  <Phone size={22} />
-                </a>
-
-                <a
-                  href="mailto:support@eutair.com"
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 transition hover:bg-cyan-500"
-                >
-                  <Mail size={22} />
-                </a>
-
-                <a
-                  href="https://wa.me/919582911766"
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 transition hover:bg-cyan-500"
-                >
-                  <FaWhatsapp size={22} />
-                </a>
-
-              </div>
-
-            </div>
-
-            {/* Quick Links */}
-
-            <div className="lg:col-span-3">
-
-              <h3 className="mb-8 text-2xl font-bold">
-                Quick Links
-              </h3>
-
-              <ul className="space-y-5">
-
-                {quickLinks.map((item) => (
-
-                  <li key={item.name}>
-
-                    <Link
-                      href={item.href}
-                      className="group flex items-center gap-3 text-slate-300 transition hover:text-cyan-400"
+                  <div
+                    className="relative"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <button
+                      className="absolute top-2 right-2 text-white text-2xl font-bold"
+                      onClick={() => setIsModalOpen(false)}
                     >
-
-                      <span className="h-2 w-2 rounded-full bg-cyan-400 transition-all duration-300 group-hover:w-5"></span>
-
-                      {item.name}
-
-                    </Link>
-
-                  </li>
-
-                ))}
-
-              </ul>
-
-            </div>
-
-            {/* Services */}
-
-            <div className="lg:col-span-4">
-
-              <h3 className="mb-8 text-2xl font-bold">
-                Our Services
-              </h3>
-
-              <ul className="space-y-5">
-
-                {services.map((item) => (
-
-                  <li key={item.name}>
-
-                    <Link
-                      href={item.href}
-                      className="group flex items-center gap-3 text-slate-300 transition hover:text-cyan-400"
-                    >
-
-                      <span className="h-2 w-2 rounded-full bg-cyan-400 transition-all duration-300 group-hover:w-5"></span>
-
-                      {item.name}
-
-                    </Link>
-
-                  </li>
-
-                ))}
-
-              </ul>
-
-            </div>
-
-          </div>
-
-                    {/* Contact + Trust Certificate */}
-
-          <div className="mt-10 grid gap-8 lg:grid-cols-2">
-
-            {/* Contact Information */}
-
-            <div>
-
-              <h3 className="mb-5 text-2xl font-bold">
-                Contact Information
-              </h3>
-
-              <div className="grid gap-6">
-
-                {/* Phone */}
-
-                <div className="group rounded-3xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:bg-white/10">
-
-                  <div className="flex items-start gap-5">
-
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500 text-white">
-                      <Phone size={24} />
-                    </div>
-
-                    <div>
-
-                      <h4 className="text-lg font-semibold">
-                        Phone
-                      </h4>
-
-                      <a
-                        href="tel:+919717159766"
-                        className="mt-2 block text-slate-300 transition hover:text-cyan-400"
-                      >
-                        +91 9717159766
-                      </a>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                {/* WhatsApp */}
-
-                <div className="group rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:bg-white/10">
-
-                  <div className="flex items-start gap-5">
-
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-500 text-white">
-                      <FaWhatsapp size={24} />
-                    </div>
-
-                    <div>
-
-                      <h4 className="text-lg font-semibold">
-                        WhatsApp
-                      </h4>
-
-                      <a
-                        href="https://wa.me/919582911766"
-                        className="mt-2 block text-slate-300 transition hover:text-cyan-400"
-                      >
-                        +91 9582911766
-                      </a>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                {/* Email */}
-
-                <div className="group rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:bg-white/10">
-
-                  <div className="flex items-start gap-5">
-
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-500 text-white">
-                      <Mail size={24} />
-                    </div>
-
-                    <div>
-
-                      <h4 className="text-lg font-semibold mb-2">
-                        Email Contacts
-                      </h4>
-
-                      <a
-                        href="mailto:support@eutair.com"
-                        className="block text-slate-300 transition hover:text-cyan-400"
-                      >
-                        support@eutair.com
-                      </a>
-
-                      <a
-                        href="mailto:sales@eutair.com"
-                        className="block mt-2 text-slate-300 transition hover:text-cyan-400"
-                      >
-                        sales@eutair.com
-                      </a>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-            {/* Trust Elite */}
-
-            <div>
-
-              <h3 className="mb-8 text-2xl font-bold">
-                Trust Elite Certificate
-              </h3>
-
-              <div className="relative overflow-hidden rounded-[32px] border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-white/5 p-8 backdrop-blur-xl">
-
-                <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-cyan-500/10 blur-[120px]" />
-
-                <div className="relative">
-
-                  <div className="flex justify-center">
-
-                    <Image
-                      src="/TRUST-ELITE.webp"
-                      alt="Trust Elite"
-                      width={170}
-                      height={170}
+                      ✕
+                    </button>
+                    <img
+                      src="/trustElite.webp"
+                      alt="Trust Elite Full"
+                      className="w-[60vw] h-[75vh] rounded-lg shadow-lg"
                     />
-
                   </div>
-
-                  <p className="mt-8 text-slate-300 leading-8">
-
-                    We are proud to present the Trust Elite Certificate of
-                    Excellence to Eutair, recognizing their commitment to
-                    exceptional customer service, outstanding business
-                    practices, and a dedication to building trust with their
-                    customers.
-
-                  </p>
-
                 </div>
-
-              </div>
-
+              )}
             </div>
-
           </div>
+        </div>
 
-        </div> {/* max-w-7xl */}
-
-      </div> {/* relative */}
-
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
-
-          <p>
-            © 2026 Eutair Equipments LLP. All Rights Reserved.
-          </p>
-
-          <p className="text-center md:text-right">
-            Website Designed By{" "}
-            <a
-              href="https://inquirybazaar.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 hover:text-cyan-300 transition"
-            >
-              Inquiry Bazaar Pvt. Ltd.
-            </a>
-          </p>
-
+        {/* COPYRIGHT */}
+        <div className="mt-10 border-t border-white/10 pt-4 text-sm">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2">
+            <p>© 2026 ARB Bearings All Rights Reserved.</p>
+            <p>
+              Website Designed By   Inquiry Bazaar Pvt. Ltd.  {" "}
+        <a
+          target="_blank"
+          href="https://inquirybazaar.com/"
+          className="text-red-600 hover:underline"
+        >
+           B2B Marketplace
+        </a>
+            </p>
+          </div>
         </div>
       </div>
-
     </footer>
   );
 }

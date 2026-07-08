@@ -46,11 +46,11 @@ export default function Excellence() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-flex rounded-full border border-red-200 bg-red-50 px-5 py-2 text-sm font-semibold tracking-[0.3em] text-red-600">
-              MANUFACTURING EXCELLENCE
+            <span className="inline-flex rounded-full   text-sm font-semibold tracking-[0.3em] text-red-600">
+              MANUFACTURING EXCELLENCE OF ARB
             </span>
 
-            <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+            <h2 className="mt-4 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
               Manufacturing Excellence
             </h2>
 

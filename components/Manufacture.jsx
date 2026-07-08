@@ -9,7 +9,7 @@ import {
 
 export default function QualityCertification() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 py-5">
+    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 py-13">
   
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -96,7 +96,7 @@ export default function QualityCertification() {
 
                {/* Left Content */}
           <div>
-            <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold uppercase tracking-widest text-red-600">
+            <span className="inline-flex items-center rounded-full    text-sm font-semibold uppercase tracking-widest text-red-600">
               Quality & Certifications
             </span>
 
