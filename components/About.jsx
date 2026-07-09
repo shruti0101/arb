@@ -11,12 +11,9 @@ export default function AboutSection() {
 
 
 const gallery = [
-  "/test3.avif",
-  "/test2.jpg",
-  "/test3.png",
-  "/test4.jfif",
-  "/test6.webp",
-  "/test5.jpg"
+  "/ab1.png",
+   "/ab2.png",
+    "/ab3.png",
 ];
 
 
@@ -63,7 +60,7 @@ const gallery = [
             alt={`ARB Bearings ${index + 1}`}
             width={650}
             height={700}
-            className="h-[620px] w-full object-contain"
+            className="h-[620px] w-full object-contain rounded-md"
           />
 
         </SwiperSlide>

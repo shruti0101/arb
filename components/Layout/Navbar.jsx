@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-[999] w-full">
 
-      {/* Premium Glass Navbar */}
+
       <div className="backdrop-blur-2xl bg-[#081B2E]/90 border-b border-white/10 shadow-[0_15px_40px_rgba(0,0,0,.18)]">
 
         <div className="max-w-[1450px] mx-auto px-5 lg:px-10">
@@ -54,29 +54,31 @@ export default function Navbar() {
 
               <Link
                 href="/"
-                className="relative text-[14px] font-semibold text-white transition hover:text-[#ff6a2b]"
+                className="relative text-[15px] font-semibold text-white transition hover:text-[#ff6a2b]"
               >
                 Home
               </Link>
 
               <Link
                 href="/about-us"
-                className="relative text-[14px] font-semibold text-white transition hover:text-[#ff6a2b]"
+                className="relative text-[15px] font-semibold text-white transition hover:text-[#ff6a2b]"
               >
                 About Us
               </Link>
 
               <Link
                 href="/blogs"
-                className="relative text-[14px] font-semibold text-white transition hover:text-[#ff6a2b]"
+                className="relative text-[15px] font-semibold text-white transition hover:text-[#ff6a2b]"
               >
                 Blogs
               </Link>
 
               <Link
                 href="/contact-us"
-                className="relative text-[14px] font-semibold text-white transition hover:text-[#ff6a2b]"
+                className="relative text-[15px] font-semibold text-white transition hover:text-[#ff6a2b]"
               >
+
+
                 Contact
               </Link>
 
@@ -268,7 +270,7 @@ export default function Navbar() {
                 href={`/categories/${cat.id}`}
                 onMouseEnter={() => setActiveMenu(cat.id)}
                 onClick={closeMenu}
-                className="group relative flex items-center gap-1 text-[13px] font-semibold text-gray-800 hover:text-[#C52C1D] transition-all"
+                className="group relative flex items-center gap-1 text-[16px] font-semibold text-gray-800 hover:text-[#C52C1D] transition-all"
               >
                 <span>{cat.name}</span>
 
@@ -292,15 +294,15 @@ export default function Navbar() {
         {activeMenu && (
           <div className="absolute left-0 top-full w-full bg-white shadow-[0_30px_80px_rgba(0,0,0,.12)] border-t border-orange-100 z-50">
 
-            <div className="max-w-[1450px] mx-auto px-10 py-3">
+            <div className="max-w-[1450px] mx-auto px-10 py-10">
 
               {/* Header */}
 
-              <div className="flex items-center justify-between mb-10">
+              <div className="flex items-center justify-between mb-5">
 
                 <div>
 
-                  <p className="uppercase tracking-[0.35em] text-xs text-orange-500 font-bold">
+                  <p className="uppercase tracking-[0.35em] text-xs text-[#C72818] font-bold">
                     Product Collection
                   </p>
 
@@ -312,7 +314,7 @@ export default function Navbar() {
 
                 <Link
                   href={`/categories/${activeMenu}`}
-                  className="rounded-full border border-red-500 px-6 py-3 text-sm font-semibold text-red-500 hover:bg-orange-500 hover:text-white transition-all"
+                  className="rounded-full border border-red-500 px-6 py-3 text-sm font-semibold text-[#28186D] hover:bg-[#28186D] hover:text-white transition-all"
                 >
                   View All Categories →
                 </Link>
@@ -328,37 +330,33 @@ export default function Navbar() {
                   ?.products?.map((prod) => (
                     <Link
                       key={prod.id}
-                      href={`/products/${prod.id}`}
+                      href="/ball-bearing"
                       onClick={closeMenu}
                       className="group"
                     >
                       <div className="overflow-hidden rounded-3xl bg-white border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-500">
 
-                        <div className="relative h-56 overflow-hidden bg-gray-100">
+                        <div className="relative h-43 overflow-hidden bg-gray-100">
 
-                          {/* <Image
+                          <Image
                             src={prod.image?.[0]?.src}
                             alt={prod.name}
                             fill
                             className="object-cover transition-transform duration-700 group-hover:scale-110"
-                          /> */}
+                          />
 
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
 
                         </div>
 
-                        <div className="p-5">
+                        <div className="p-3">
 
-                          <h3 className="font-bold text-gray-900 text-[15px] leading-6 group-hover:text-[#ff6a2b] transition">
+                          <h3 className="font-bold text-gray-900 text-[17px] leading-6 group-hover:text-[#28186D] transition">
                             {prod.name}
                           </h3>
 
-                          <p className="text-sm text-gray-500 mt-2 line-clamp-2">
-                            Premium industrial products engineered for maximum
-                            durability and reliable performance.
-                          </p>
 
-                          <div className="mt-5 flex items-center text-[#ff6a2b] font-semibold text-sm">
+                          <div className="mt-3 flex items-center text-[#C72818] font-semibold text-sm">
 
                             Explore Product
 
@@ -376,32 +374,9 @@ export default function Navbar() {
 
               </div>
 
-              {/* Bottom CTA */}
+             
 
-              <div className="mt-12 rounded-3xl bg-gradient-to-r from-[#081B2E] to-[#102f4f] p-8 flex items-center justify-between">
-
-                <div>
-
-                  <h3 className="text-2xl font-bold text-white">
-                    Need Help Choosing the Right Product?
-                  </h3>
-
-                  <p className="text-white/70 mt-2">
-                    Our experts are available to recommend the best solution for
-                    your industrial requirements.
-                  </p>
-
-                </div>
-
-                <Link
-                  href="/contact-us"
-                  className="rounded-full bg-[#ff6a2b] px-8 py-4 text-white font-semibold hover:bg-[#e65a22] transition"
-                >
-                  Request Consultation
-                </Link>
-
-              </div>
-
+           
             </div>
 
           </div>

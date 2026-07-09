@@ -9,7 +9,7 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 const timeline = [
   {
     year: "1990",
@@ -36,7 +36,38 @@ const timeline = [
 export default function OurJourney() {
 
 
+
+
+
+
 const timelineRef = useRef(null);
+const bearingRef = useRef(null);
+
+const [maxTravel, setMaxTravel] = useState(0);
+
+useLayoutEffect(() => {
+  const updateHeight = () => {
+    if (!timelineRef.current || !bearingRef.current) return;
+
+    const timelineHeight = timelineRef.current.offsetHeight;
+    const bearingHeight = bearingRef.current.offsetHeight;
+
+    // Stop the bearing exactly at the bottom
+    setMaxTravel(Math.max(0, timelineHeight - bearingHeight));
+  };
+
+  updateHeight();
+
+  // Recalculate after layout settles
+  const timeout = setTimeout(updateHeight, 100);
+
+  window.addEventListener("resize", updateHeight);
+
+  return () => {
+    clearTimeout(timeout);
+    window.removeEventListener("resize", updateHeight);
+  };
+}, []);
 
 const { scrollYProgress } = useScroll({
   target: timelineRef,
@@ -46,15 +77,16 @@ const { scrollYProgress } = useScroll({
 const bearingY = useTransform(
   scrollYProgress,
   [0, 1],
-  [0, 1500]
+  [0, maxTravel]
 );
-
 
 const smoothBearingY = useSpring(bearingY, {
   stiffness: 70,
   damping: 25,
   mass: 0.8,
 });
+
+
   return (
     <section className="relative overflow-hidden bg-[#f8fafc] py-10">
 
@@ -109,19 +141,22 @@ const smoothBearingY = useSpring(bearingY, {
 
   {/* Moving Bearing */}
 <motion.div
+  ref={bearingRef}
   style={{ y: smoothBearingY }}
   animate={{ rotate: 360 }}
   transition={{
-    duration: 18,
-    repeat: Infinity,
-    ease: "linear",
+    rotate: {
+      duration: 18,
+      repeat: Infinity,
+      ease: "linear",
+    },
   }}
   className="absolute left-1/2 top-0 -translate-x-1/2 z-10 hidden lg:block"
 >
   <Image
     src="/3.png"
     alt="Bearing"
-    width={250}
+    width={280}
     height={210}
     className="drop-shadow-2xl animate-spin"
   />

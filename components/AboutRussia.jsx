@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle2, Play, ArrowRight } from "lucide-react";
+import { CheckCircle2, Play } from "lucide-react";
 
 const features = [
   "Modern production facilities in Russia",
@@ -25,53 +25,38 @@ export default function AboutRussia() {
 
         <div className="grid lg:grid-cols-[0.9fr_1fr_0.8fr] gap-10 items-center">
 
-          {/* ================================================= */}
-          {/* VIDEO */}
-          {/* ================================================= */}
 
           <div>
 
             <div className="relative overflow-hidden rounded-[26px] shadow-2xl group">
 
-              <Image
-                src="/about-russia.jpg"
-                alt="ARB Russia"
-                width={250}
-                height={250}
-                className="h-[400px] w-full object-cover transition duration-700 group-hover:scale-105"
-              />
+           <video
+                className="
+                  w-full
+                  h-[250px]
+                  sm:h-[350px]
+                  md:h-[420px]
+                  object-cover
+                "
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source
+                  src="/video4.mp4"
+                  type="video/mp4"
+                />
+              </video>
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
 
-              {/* Play Button */}
-
-              <button className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-
-                <div className="relative">
-
-                  <span className="absolute inset-0 rounded-full bg-blue-600 animate-ping opacity-40" />
-
-                  <div className="relative flex h-24 w-24 items-center justify-center rounded-full border-4 border-white bg-[#1D4ED8] shadow-xl">
-
-                    <Play
-                      fill="white"
-                      className=" text-white"
-                      size={34}
-                    />
-
-                  </div>
-
-                </div>
-
-              </button>
 
             </div>
 
           </div>
 
-          {/* ================================================= */}
-          {/* TEXT */}
-          {/* ================================================= */}
+    
 
           <div>
 
@@ -93,7 +78,7 @@ export default function AboutRussia() {
 
             </h2>
 
-            <p className="mt-5 text-[15px]  text-gray-600">
+            <p className="mt-5 text-[15px]  text-black">
 
               ARB Bearing is a trusted Russian manufacturer of
               high-quality bearings, delivering reliable

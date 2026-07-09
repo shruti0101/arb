@@ -21,14 +21,19 @@ export default function Footer() {
       />
 
       {/* DARK OVERLAY */}
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.5) 30%) ",
-        }}
-        aria-hidden="true"
-      />
+    <div
+  className="absolute inset-0 -z-10"
+  style={{
+    background: `
+      linear-gradient(
+        180deg,
+        rgba(0,0,0,0.85) 0%,
+        rgba(0,0,0,0.72) 35%,
+        rgba(0,0,0,0.82) 100%
+      )
+    `,
+  }}
+/>
 
       {/* TOP ACCENT */}
       <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-red-600 to-red-600" />
@@ -98,11 +103,11 @@ export default function Footer() {
               {[
                 { name: "ceramic bearing", link: "#" },
                 { name: "ball bearing", link: "#" },
-                { name: "taper bearing", link: "#" },
+                { name: "steel bearing", link: "#" },
                 { name: "ceramic bearing", link: "#" },
                 { name: "ball bearing", link: "#" },
                 { name: "taper bearing", link: "#" },
-                { name: "ceramic bearing", link: "#" },
+                { name: "round bearing", link: "#" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link
