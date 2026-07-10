@@ -26,9 +26,9 @@ export default function Home() {
   <Category/>
   <Timeline/>
 <About/>
-  <Excellence/>
     <Count/>
-  <Manufacturing/>
+  <Excellence/>
+  {/* <Manufacturing/> */}
   <Testimonials/>
 
 </div>

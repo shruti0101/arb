@@ -60,7 +60,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
           {/* LEFT */}
           <div>
-            <p className="mb-7 tracking-[2px] font-bold uppercase text-blue-600">
+            <p className="mb-7 tracking-[2px] font-bold uppercase text-red-600">
               RUSSIAN PRECISION, GLOBAL TRUST
             </p>
 
