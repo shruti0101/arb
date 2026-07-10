@@ -135,7 +135,7 @@ export default function AboutRussia() {
           <div className="relative flex flex-col mr-4">
 
             <Image
-              src="/russia.jpg"
+              src="/map23.png"
               alt="World Map"
               width={520}
               height={320}
@@ -144,13 +144,13 @@ export default function AboutRussia() {
 
             {/* Pins */}
 
-            <span className="absolute top-[42%] left-[40%] h-4 w-4 rounded-full border-2 border-white bg-blue-600 shadow-lg animate-pulse" />
+            <span className="absolute top-[42%] left-[40%] h-4 w-4 rounded-full border-2 border-white bg-red-600 shadow-lg animate-pulse" />
 
-            <span className="absolute top-[36%] left-[66%] h-4 w-4 rounded-full border-2 border-white bg-blue-600 shadow-lg animate-pulse" />
+            <span className="absolute top-[36%] left-[66%] h-4 w-4 rounded-full border-2 border-white bg-red-600 shadow-lg animate-pulse" />
 
-            <span className="absolute top-[58%] left-[54%] h-4 w-4 rounded-full border-2 border-white bg-blue-600 shadow-lg animate-pulse" />
+            <span className="absolute top-[58%] left-[54%] h-4 w-4 rounded-full border-2 border-white bg-red-600 shadow-lg animate-pulse" />
 
-            <span className="absolute top-[74%] left-[82%] h-4 w-4 rounded-full border-2 border-white bg-blue-600 shadow-lg animate-pulse" />
+            <span className="absolute top-[74%] left-[82%] h-4 w-4 rounded-full border-2 border-white bg-red-600 shadow-lg animate-pulse" />
 
             {/* Badge */}
 
