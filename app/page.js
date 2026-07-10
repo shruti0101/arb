@@ -17,7 +17,6 @@ export default function Home() {
 <div>
 
 <Hero/>
-<About/>
   <ProductsSlider/>
 <Clients/>
   
@@ -26,6 +25,7 @@ export default function Home() {
 <AboutRussia/>
   <Category/>
   <Timeline/>
+<About/>
   <Excellence/>
     <Count/>
   <Manufacturing/>

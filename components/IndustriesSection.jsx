@@ -32,7 +32,7 @@ const industries = [
 
 ];
 
-export default function IndustriesSection() {
+export default function  IndustriesSection() {
   return (
     <section className="bg-[#EDF4FE] py-10">
       <div className="max-w-7xl mx-auto ">
