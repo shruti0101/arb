@@ -65,7 +65,7 @@ export default function ARBBearingsPage() {
         <div className="border-r border-slate-100">
           <div className="sticky top-24 px-10 py-14">
             <img
-              src="/bearing333.png"
+              src="/test.webp"
               alt="Ball Bearings"
               className="w-full max-w-md mx-auto lg:mx-0 object-cover"
             />
