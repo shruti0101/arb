@@ -64,11 +64,13 @@ export default function ARBBearingsPage() {
         {/* Left: product image */}
         <div className="border-r border-slate-100">
           <div className="sticky top-24 px-10 py-14">
-            <img
-              src="/test.webp"
+            <div className="w-full mx-auto">            <img
+              src="/singleP.png"
               alt="Ball Bearings"
-              className="w-full max-w-md mx-auto lg:mx-0 object-cover"
+              className="w-full  lg:mx-0 object-cover"
             />
+            </div>
+
 
             <div className="flex gap-3 mt-8">
               <span className="text-[11px] bg-gradient-to-r from-[#28186C] to-red-600 font-semibold tracking-wide border border-slate-300 rounded px-3 py-1.5 text-white">

@@ -11,9 +11,9 @@ import "swiper/css/navigation";
 
 const products = [
   {
-    title: "Deep Groove Ball Bearings",
-    desc: "High speed, low friction, versatile applications",
-    image: "/1.webp",
+    title: "Taper Roller Bearings",
+    desc: "High load capacity, superior durability, ideal for radial & axial loads",
+    image: "/other/tapper.png",
     applications: [
       "Electric Motors",
       "Automobiles",
@@ -25,8 +25,8 @@ const products = [
   },
 
   {
-    title: "Spherical Roller Bearings",
-    desc: "Handle heavy loads and misalignment",
+    title: "DAC Bearings",
+    desc: "Precision wheel hub bearings, smooth performance, long-lasting reliability",
     image: "/2.webp",
     applications: [
       "Mining Equipment",
@@ -40,8 +40,8 @@ const products = [
   // add for remaining products...
 
   {
-    title: "Spherical Roller Bearings",
-    desc: "Handle heavy loads and misalignment",
+    title: "Spherical Bearings",
+    desc: "Self-aligning design, handles misalignment, built for heavy-duty ",
     image: "/2.webp",
     applications: [
       "Mining Equipment",
@@ -53,8 +53,8 @@ const products = [
   },
 
   {
-    title: "Deep Groove Ball Bearings",
-    desc: "High speed, low friction, versatile applications",
+    title: "Cylindrical Bearings",
+    desc: "High radial load capacity, low friction, excellent for high-speed operations",
     image: "/1.webp",
     applications: [
       "Electric Motors",
@@ -67,8 +67,8 @@ const products = [
   },
 
   {
-    title: "Deep Groove Ball Bearings",
-    desc: "High speed, low friction, versatile applications",
+    title: "Ball Bearings",
+    desc: "Smooth rotation, low friction, reliable performance for versatile applications",
     image: "/1.webp",
     applications: [
       "Electric Motors",
@@ -80,19 +80,19 @@ const products = [
     ],
   },
 
-  {
-    title: "Deep Groove Ball Bearings",
-    desc: "High speed, low friction, versatile applications",
-    image: "/1.webp",
-    applications: [
-      "Electric Motors",
-      "Automobiles",
-      "Agricultural Machinery",
-      "Industrial Pumps",
-      "Fans & Blowers",
-      "Gearboxes",
-    ],
-  },
+  // {
+  //   title: "Deep Groove Ball Bearings",
+  //   desc: "High speed, low friction, versatile applications",
+  //   image: "/1.webp",
+  //   applications: [
+  //     "Electric Motors",
+  //     "Automobiles",
+  //     "Agricultural Machinery",
+  //     "Industrial Pumps",
+  //     "Fans & Blowers",
+  //     "Gearboxes",
+  //   ],
+  // },
 ];
 
 export default function ProductSlider() {
@@ -121,20 +121,20 @@ export default function ProductSlider() {
         </div>
 
         <div className="relative">
-          <button className="custom-prev absolute -left-7 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/10 bg-[#091A2D] flex items-center justify-center hover:bg-blue-600 transition">
+          {/* <button className="custom-prev absolute -left-7 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/10 bg-[#091A2D] flex items-center justify-center hover:bg-blue-600 transition">
             <ChevronLeft className="text-white" />
-          </button>
+          </button> */}
 
-          <button className="custom-next absolute -right-7 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/10 bg-[#091A2D] flex items-center justify-center hover:bg-blue-600 transition">
+          {/* <button className="custom-next absolute -right-7 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/10 bg-[#091A2D] flex items-center justify-center hover:bg-blue-600 transition">
             <ChevronRight className="text-white" />
-          </button>
+          </button> */}
 
           <Swiper
-            modules={[Navigation, Autoplay]}
-            navigation={{
-              prevEl: ".custom-prev",
-              nextEl: ".custom-next",
-            }}
+            modules={[Navigation]}
+            // navigation={{
+            //   prevEl: ".custom-prev",
+            //   nextEl: ".custom-next",
+            // }}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
@@ -185,7 +185,7 @@ export default function ProductSlider() {
                     {item.title}
                   </h3>
 
-                  <p className="text-black mt-4 text-[15px] leading-6">
+                  <p className="text-black mt-4 text-[15px] leading-5">
                     {item.desc}
                   </p>
                   <div className="mt-8">
