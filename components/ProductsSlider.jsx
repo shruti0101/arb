@@ -27,7 +27,7 @@ const products = [
   {
     title: "DAC Bearings",
     desc: "Precision wheel hub bearings, smooth performance, long-lasting reliability",
-    image: "/2.webp",
+    image: "/other/DAC bearing.png",
     applications: [
       "Mining Equipment",
       "Steel Plants",
@@ -42,7 +42,7 @@ const products = [
   {
     title: "Spherical Bearings",
     desc: "Self-aligning design, handles misalignment, built for heavy-duty ",
-    image: "/2.webp",
+    image: "/other/spherical.png",
     applications: [
       "Mining Equipment",
       "Steel Plants",
@@ -55,7 +55,7 @@ const products = [
   {
     title: "Cylindrical Bearings",
     desc: "High radial load capacity, low friction, excellent for high-speed operations",
-    image: "/1.webp",
+    image: "/other/CYLINDRICAL.png",
     applications: [
       "Electric Motors",
       "Automobiles",
@@ -69,7 +69,7 @@ const products = [
   {
     title: "Ball Bearings",
     desc: "Smooth rotation, low friction, reliable performance for versatile applications",
-    image: "/1.webp",
+    image: "/other/ball.png",
     applications: [
       "Electric Motors",
       "Automobiles",
@@ -176,7 +176,7 @@ export default function ProductSlider() {
                         alt={item.title}
                         width={490}
                         height={400}
-                        className="bearing-3d relative z-10 object-cover"
+                        className="bearing-3d size-80 relative z-10 object-cover"
                       />
                     </div>
                   </div>
