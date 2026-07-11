@@ -43,7 +43,7 @@ export default function ARBBearingsPage() {
     title: "Roller Bearings",
     description:
       "Heavy-duty roller bearings designed to handle high radial loads while delivering exceptional durability and operational efficiency.",
-    image: "/1.webp",
+    image: "/test.webp",
   },
   {
     title: "Industrial Bearing Solutions",

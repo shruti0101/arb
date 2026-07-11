@@ -6,7 +6,7 @@ import { ArrowRight, Factory, Pickaxe, Fuel, Building2, Train, Cog } from "lucid
 const industries = [
   {
     title: "Metallurgy",
-    image: "/Metallurgy.jfif",
+    image: "/Metallurgy.webp",
     icon: Factory,
   },
   {
