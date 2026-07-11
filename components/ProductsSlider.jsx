@@ -109,8 +109,8 @@ export default function ProductSlider() {
               Our Products
             </p>
 
-            <h2 className="text-[#27176D] text-5xl font-bold mt-2">
-              Precision in Every Rotation
+            <h2 className="text-blue-700 text-5xl font-bold mt-2">
+              <span className="text-black">Precision in </span> Every Rotation
             </h2>
           </div>
 

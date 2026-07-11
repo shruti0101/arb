@@ -151,7 +151,7 @@ export default function Navbar() {
                 hover:rotate-6
                 "
               >
-                <FaWhatsapp size={22} />
+                <FaWhatsapp size={35} />
               </a>
 
               {/* CTA */}
@@ -163,11 +163,13 @@ export default function Navbar() {
                 overflow-hidden
                 relative
                 rounded-full
-                bg-[#C52C1D]
+                bg-white
                
                 px-7
+                border
+                border-blue-700
                 py-4
-                text-white
+                text-red-600
                 font-semibold
                 shadow-[0_15px_40px_rgba(255,106,43,.45)]
                 transition-all
