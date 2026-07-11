@@ -76,12 +76,12 @@ export default function HeroSection() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-5">
-              <button className="flex items-center gap-3 rounded-xl bg-blue-700 px-8 py-4 font-semibold text-white shadow-xl transition hover:scale-105">
+              <button className="flex items-center gap-3 rounded-xl bg-gradient-to-r from-[#26196D] to-blue-600 px-8 py-4 font-semibold text-white shadow-xl transition hover:scale-105">
                 EXPLORE PRODUCTS
                 <MoveRight size={18} />
               </button>
 
-              <button className="flex items-center gap-3 rounded-xl border border-blue-600 px-8 py-4 text-blue-600 transition hover:bg-blue-50">
+              <button className="flex items-center gap-3 rounded-xl border border-[#CC1C15] bg-[#CC1C15]/5 px-8 py-4 text-red-500  hover:bg-red-600 transition hover:text-white">
                 DOWNLOAD CATALOG
                 <Download size={18} />
               </button>

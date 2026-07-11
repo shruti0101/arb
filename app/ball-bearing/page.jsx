@@ -1,291 +1,311 @@
 "use client";
-import { PhoneCall, Download, MessageCircle } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
-import { useState } from "react";
-export default function SingleProductHero() {
-  const features = [
-    "Superior Contamination Protection",
-    "Reduced Lubrication Requirements",
-    "Excellent Misalignment Capability",
-    "Extended Bearing Service Life",
+import React, { useState } from "react";
+import {
+  Phone,
+  ShoppingCart,
+  ChevronRight,
+  Shield,
+  Grid3x3,
+  ArrowLeftRight,
+  Clock,
+  ArrowRight,
+  MessageSquare,
+  Download,
+  Share2,
+  AtSign,
+  MapPin,
+  Mail,
+  Factory,
+  Bike,
+  Car,
+  Boxes,
+} from "lucide-react";
 
-  ];
-
-   const [activeTab, setActiveTab] = useState("overview");
+export default function ARBBearingsPage() {
+  const [activeTab, setActiveTab] = useState("overview");
 
   return (
+    <div className="min-h-screen max-w-7xl mx-auto bg-white font-sans text-slate-900">
+      {/* Header */}
 
-<>
+      {/* Top section: image + product info */}
+      <section className="grid grid-cols-1 lg:grid-cols-2">
+        {/* Left: product image */}
+        {/* Left: product image */}
+        <div className="border-r border-slate-100">
+          <div className="sticky top-24 px-10 py-14">
+            <img
+              src="/1.webp"
+              alt="Ball Bearings"
+              className="w-full max-w-md mx-auto lg:mx-0 object-contain"
+            />
 
+            <div className="flex gap-3 mt-8">
+              <span className="text-[11px] bg-gradient-to-r from-[#28186C] to-red-600 font-semibold tracking-wide border border-slate-300 rounded px-3 py-1.5 text-white">
+                INDUSTRIAL GRADE
+              </span>
+              <span className="text-[11px] font-semibold tracking-wide border border-slate-300 rounded px-3 py-1.5 bg-gradient-to-r from-[#28186C] to-red-600 text-white">
+                HIGH PRECISION
+              </span>
+            </div>
 
-    <section className="bg-white py-10">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Breadcrumb */}
-        <div className="flex items-center flex-wrap gap-2 text-sm text-slate-500 mb-6">
-          <Link href="/" className="hover:text-red-600">
-            Home
-          </Link>
+            <div className="mt-10 border-t border-slate-200 pt-4">
+              <p className="text-[11px] font-semibold tracking-widest text-slate-500 mb-3">
+                SERIAL RANGE
+              </p>
 
-          <ChevronRight size={15} />
-
-          <Link href="/products" className="hover:text-red-600">
-            Bearings
-          </Link>
-
-          <ChevronRight size={15} />
-
-          <Link href="/products/ball-bearings" className="hover:text-red-600">
-            Ball Bearings
-          </Link>
-
-          <ChevronRight size={15} />
-
-          <span className="text-red-600 font-semibold">
-            Ball Bearings
-          </span>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          {/* Left Image */}
-          <div>
-            <div className="border border-gray-200 rounded-md bg-white overflow-hidden">
-              <div className="relative aspect-square">
-                <Image
-                  src="/1.webp"
-                  alt="Ball Bearings"
-                  fill
-                  className="object-contain p-8 hover:scale-105 transition duration-500"
-                />
+              <div className="flex items-center gap-4 text-sm font-semibold">
+                <span>SERIES 6200</span>
+                <span className="text-slate-300">•</span>
+                <span>HIGH SPEED</span>
+                <span className="text-slate-300">•</span>
+                <span>LOW NOISE</span>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Right Content */}
-          <div>
-            <h1 className="text-5xl font-bold leading-tight text-[#28186D]">
-              Ball Bearings
-            </h1>
+        {/* Right: info panel */}
+        <div className="bg-slate-50 px-10 py-14">
+          {/* Breadcrumbs */}
+          <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
+            <span>Home</span>
+            <ChevronRight size={12} />
+            <span>Bearings</span>
+            <ChevronRight size={12} />
+            <span className="text-slate-900 font-semibold">Ball Bearings</span>
+          </div>
 
-            <p className="mt-4 text-md leading-8 text-black">
-              ARB Ball Bearings are manufactured using premium-grade bearing
-              steel to deliver exceptional performance, reduced friction, and
-              long service life. Designed for high-speed and heavy-duty
-              applications, they are widely used in automotive, industrial,
-              agricultural, and engineering machinery.
-            </p>
+          <h1 className="text-5xl font-bold text-slate-900 mb-5">
+            Ball Bearings
+          </h1>
 
-            <h3 className="mt-6 text-3xl font-bold text-[#28186D]">
-              Key Features
-            </h3>
+          <p className="text-slate-600 leading-relaxed mb-8 max-w-lg text-[15px]">
+            ARB Ball Bearings are engineered using premium-grade chrome steel to
+            deliver exceptional mechanical performance, significantly reduced
+            friction coefficients, and an extended operational lifecycle in
+            extreme environments.
+          </p>
 
-            <ul className="mt-6 space-y-4">
-              {features.map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-3 text-md text-slate-700"
+          {/* Feature cards */}
+          <div className="grid grid-cols-2 gap-4 mb-8 max-w-lg">
+            <FeatureCard
+              icon={<Shield size={18} className="text-red-600" />}
+              title="CONTAMINATION PROTECTION"
+              desc="Enhanced sealing technology for harsh conditions."
+            />
+            <FeatureCard
+              icon={<Grid3x3 size={18} className="text-red-600" />}
+              title="OPTIMIZED LUBRICATION"
+              desc="Reduced maintenance intervals and grease retention."
+            />
+            <FeatureCard
+              icon={<ArrowLeftRight size={18} className="text-red-600" />}
+              title="MISALIGNMENT CAPABILITY"
+              desc="Structural resilience against shaft deviations."
+            />
+            <FeatureCard
+              icon={<Clock size={18} className="text-red-600" />}
+              title="EXTENDED SERVICE LIFE"
+              desc="Proprietary heat treatment for superior durability."
+            />
+          </div>
+
+          {/* CTAs */}
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <button className="flex items-center gap-2 bg-gradient-to-r from-[#28186C] to-red-600 hover:scale-105 transition-discrete duration-150 text-white text-sm font-semibold px-6 py-3 rounded-md ">
+              ENQUIRE NOW <ArrowRight size={15} />
+            </button>
+            {/* <button className="flex items-center gap-2 border border-slate-300 text-sm font-semibold px-6 py-3 rounded-md hover:bg-white transition-colors">
+              <MessageSquare size={15} /> WHATSAPP
+            </button> */}
+
+            <button className="flex items-center gap-2 border border-slate-300 text-sm font-semibold px-6 py-3 rounded-md hover:bg-white transition-colors">
+              <Download size={15} /> BROCHURE
+            </button>
+          </div>
+
+          {/* Tabs */}
+          <div className="flex items-center gap-8 mt-14 border-b border-slate-200 text-sm font-semibold">
+            <TabButton
+              label="PRODUCT OVERVIEW"
+              active={activeTab === "overview"}
+              onClick={() => setActiveTab("overview")}
+            />
+            <TabButton
+              label="TECHNICAL DATA"
+              active={activeTab === "technical"}
+              onClick={() => setActiveTab("technical")}
+            />
+            <TabButton
+              label="DOWNLOADS"
+              active={activeTab === "downloads"}
+              onClick={() => setActiveTab("downloads")}
+            />
+          </div>
+
+          {activeTab === "overview" && (
+            <section className="grid grid-cols-1 min-w-[560px] ">
+              <div className="hidden lg:block" />
+              <div className="bg-slate-50 px-10 py-14">
+                <h2 className="text-2xl font-bold text-slate-900 mb-5">
+                  High-Load Performance Engineering
+                </h2>
+                <p className="text-slate-600 leading-relaxed mb-6 max-w-lg text-[15px]">
+                  QCB® Sealed spherical roller bearings are designed to deliver
+                  reliable performance in demanding operating conditions.
+                  Combining high load capacity with effective contamination
+                  protection, they are well suited to applications such as
+                  conveyors, mining equipment, quarry machinery, and steel
+                  processing plants where dirt, dust, and moisture are common.
+                </p>
+
+                <ul className="space-y-3 mb-10 max-w-lg">
+                  {[
+                    "Sheet steel reinforced HNBR seal standard",
+                    "Brass cage design as standard (CA style)",
+                    "Annular groove and 3 lubrication holes (W33)",
+                    "Lithium EP2 general purpose grease (VT143)",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 text-[15px] text-slate-700"
+                    >
+                      <span className="mt-1.5 w-1.5 h-1.5 bg-red-600 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <hr className="border-slate-200 mb-10 max-w-lg" />
+
+                <h3 className="text-xl font-bold text-slate-900 tracking-wide mb-6">
+                  INDUSTRIAL <span className="bg-gradient-to-r from-[#28186C] to-red-600 bg-clip-text text-transparent">APPLICATIONS</span>
+                </h3>
+
+                <div className="grid grid-cols-4 gap-4 max-w-lg">
+                  <AppCard icon={<Factory size={22} />} label="MANUFACTURING" />
+                  <AppCard icon={<Bike size={22} />} label="AGRI-MACHINERY" />
+                  <AppCard icon={<Car size={22} />} label="AUTOMOTIVE" />
+                  <AppCard icon={<Boxes size={22} />} label="LOGISTICS" />
+                </div>
+              </div>
+            </section>
+          )}
+
+          {activeTab === "technical" && (
+            <div className="py-12 min-w-[560px]">
+              <h2 className="text-4xl font-bold text-[#003B7A] mb-2">
+                Technical Dimensions
+              </h2>
+
+              <div className="overflow-x-auto bg-white rounded-lg shadow">
+                <table className="w-full border-collapse">
+                  <thead className="bg-gradient-to-r from-[#28186C] to-red-600 text-white">
+                    <tr>
+                      <th className="p-4 text-left">Parameter</th>
+                      <th className="p-4 text-left">Value</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="p-4">Bore Diameter</td>
+                      <td className="p-4">50 mm</td>
+                    </tr>
+
+                    <tr className="border-b">
+                      <td className="p-4">Outer Diameter</td>
+                      <td className="p-4">90 mm</td>
+                    </tr>
+
+                    <tr className="border-b">
+                      <td className="p-4">Width</td>
+                      <td className="p-4">23 mm</td>
+                    </tr>
+
+                    <tr>
+                      <td className="p-4">Weight</td>
+                      <td className="p-4">0.75 kg</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "downloads" && (
+            <div className="py-16 min-w-[560px]">
+              <h2 className="text-4xl font-bold text-[#003B7A] mb-8">
+                Downloads
+              </h2>
+
+              <div className="space-y-4">
+                <a
+                  href="#"
+                  className="block bg-white p-5 rounded-lg shadow hover:shadow-lg transition"
                 >
-                  <span className="mt-2 h-2 w-2 rounded-full bg-black"></span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+                  📄 Product Catalogue.pdf
+                </a>
 
-
-<div className="mt-10 flex w-full gap-3">
-
-  {/* Enquire */}
-  <button className="group relative flex-1 overflow-hidden rounded-lg bg-gradient-to-r from-red-600 to-red-700 px-4 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-red-500/30">
-    <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-700 group-hover:translate-x-full" />
-    <span className="relative flex items-center justify-center gap-2 whitespace-nowrap text-sm">
-      <PhoneCall size={18} />
-      ENQUIRE NOW
-    </span>
-  </button>
-
-  {/* WhatsApp */}
-  <button className="group relative flex-1 overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 to-green-600 px-4 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-green-500/30">
-    <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-700 group-hover:translate-x-full" />
-    <span className="relative flex items-center justify-center gap-2 whitespace-nowrap text-sm">
-      <MessageCircle size={18} />
-      WHATSAPP NOW
-    </span>
-  </button>
-
-  {/* Brochure */}
-  <button className="group flex-1 rounded-lg border-2 border-slate-300 bg-white px-4 py-4 font-semibold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#28186C] hover:bg-[#28186C] hover:text-white">
-    <span className="flex items-center justify-center gap-2 whitespace-nowrap text-sm">
-      <Download size={18} />
-      DOWNLOAD BROCHURE
-    </span>
-  </button>
-
-</div>
-          
-          </div>
-        </div>
-      </div>
-    </section>
-
-     <section className="bg-[#eef2f5] py-14">
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* Tabs */}
-        <div className="flex flex-wrap gap-10 border-b border-gray-300">
-
-          <button
-            onClick={() => setActiveTab("overview")}
-            className={`pb-4 text-[19px] font-medium transition ${
-              activeTab === "overview"
-                ? "border-b-4 border-red-600 text-black font-semibold"
-                : "text-black hover:text-red-600"
-            }`}
-          >
-            Product Overview
-          </button>
-
-          <button
-            onClick={() => setActiveTab("dimensions")}
-            className={`pb-4 text-[19px] font-medium transition ${
-              activeTab === "dimensions"
-                ? "border-b-4 border-red-600 text-black font-semibold"
-                : "text-black hover:text-red-600"
-            }`}
-          >
-            Dimensions
-          </button>
-
-          <button
-            onClick={() => setActiveTab("downloads")}
-            className={`pb-4 text-[19px] font-medium transition ${
-              activeTab === "downloads"
-                ? "border-b-4 border-red-600 text-black font-semibold"
-                : "text-black hover:text-red-600"
-            }`}
-          >
-            Downloads
-          </button>
-
-        </div>
-
-        {/* OVERVIEW */}
-        {activeTab === "overview" && (
-          <div className="pt-10">
-
-            <p className="text-[18px] leading-8 text-gray-800">
-              <strong>QCB®</strong> Sealed spherical roller bearings are designed
-              to deliver reliable performance in demanding operating conditions.
-              Combining high load capacity with effective contamination
-              protection, they are well suited to applications such as
-              conveyors, mining equipment, quarry machinery, and steel
-              processing plants where dirt, dust, and moisture are common.
-            </p>
-
-            <h2 className="text-[#28186D] text-[44px] font-bold mt-8">
-              Key Features
-            </h2>
-
-            <ul className="mt-5 space-y-3 list-disc pl-7 text-[18px] leading-8 text-gray-800">
-              <li>Interchangeable with other brands</li>
-              <li>
-                Sheet steel reinforced HNBR seal standard (Equivalent to SKF
-                2RS5 seal)
-              </li>
-              <li>CA style brass cage design standard</li>
-              <li>Annular groove and 3 lubrication holes standard (W33)</li>
-              <li>Lithium EP2 general purpose grease (VT143)</li>
-              <li>Taper bore versions available (K)</li>
-            </ul>
-
-            <h2 className="text-[#28186D] text-[44px] font-bold mt-10">
-              What are the Typical Uses for Sealed Sphericals?
-            </h2>
-
-            <ul className="mt-5 space-y-3 list-disc pl-7 text-[18px] leading-8 text-gray-800">
-              <li>Mining and Quarrying</li>
-              <li>Aggregates</li>
-              <li>Conveyors</li>
-              <li>Steel processing plants</li>
-            </ul>
-
-          </div>
-        )}
-
-        {/* DIMENSIONS */}
-        {activeTab === "dimensions" && (
-          <div className="py-16">
-            <h2 className="text-4xl font-bold text-[#003B7A] mb-6">
-              Dimensions
-            </h2>
-
-            <div className="overflow-x-auto bg-white rounded-lg shadow">
-              <table className="w-full border-collapse">
-                <thead className="bg-[#003B7A] text-white">
-                  <tr>
-                    <th className="p-4 text-left">Parameter</th>
-                    <th className="p-4 text-left">Value</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr className="border-b">
-                    <td className="p-4">Bore Diameter</td>
-                    <td className="p-4">50 mm</td>
-                  </tr>
-
-                  <tr className="border-b">
-                    <td className="p-4">Outer Diameter</td>
-                    <td className="p-4">90 mm</td>
-                  </tr>
-
-                  <tr className="border-b">
-                    <td className="p-4">Width</td>
-                    <td className="p-4">23 mm</td>
-                  </tr>
-
-                  <tr>
-                    <td className="p-4">Weight</td>
-                    <td className="p-4">0.75 kg</td>
-                  </tr>
-                </tbody>
-              </table>
+                <a
+                  href="#"
+                  className="block bg-white p-5 rounded-lg shadow hover:shadow-lg transition"
+                >
+                  📄 Technical Datasheet.pd f
+                </a>
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* DOWNLOADS */}
-        {activeTab === "downloads" && (
-          <div className="py-16">
+          <div className="sticky top-24 px-10 py-14"></div>
+        </div>
+      </section>
 
-            <h2 className="text-4xl font-bold text-[#003B7A] mb-8">
-              Downloads
-            </h2>
 
-            <div className="space-y-4">
+         <section>
+          </section> 
 
-              <a
-                href="#"
-                className="block bg-white p-5 rounded-lg shadow hover:shadow-lg transition"
-              >
-                📄 Product Catalogue.pdf
-              </a>
+    </div>
+  );
+}
 
-              <a
-                href="#"
-                className="block bg-white p-5 rounded-lg shadow hover:shadow-lg transition"
-              >
-                📄 Technical Datasheet.pdf
-              </a>
-
-            </div>
-
-          </div>
-        )}
-
+function FeatureCard({ icon, title, desc }) {
+  return (
+    <div className="bg-white border border-slate-200 rounded-md p-4">
+      <div className="mb-2">{icon}</div>
+      <div className="text-[11px] font-bold tracking-wide text-slate-900 mb-1">
+        {title}
       </div>
-    </section>
-</>
+      <div className="text-[11px] text-slate-500 leading-relaxed">{desc}</div>
+    </div>
+  );
+}
 
+function TabButton({ label, active, onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className={`pb-3 -mb-px border-b-2 transition-colors ${
+        active
+          ? "border-red-600 text-slate-900"
+          : "border-transparent text-slate-400 hover:text-slate-600"
+      }`}
+    >
+      {label}
+    </button>
+  );
+}
+
+function AppCard({ icon, label }) {
+  return (
+    <div className="bg-white border border-slate-200 rounded-md flex flex-col items-center justify-center gap-3 py-6">
+      <div className="w-11 h-11 bg-blue-50 text-slate-800 rounded-md flex items-center justify-center">
+        {icon}
+      </div>
+      <span className="text-[10px] font-semibold tracking-wide text-slate-700 text-center px-1">
+        {label}
+      </span>
+    </div>
   );
 }
