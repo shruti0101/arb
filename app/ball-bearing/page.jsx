@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   Phone,
   ShoppingCart,
@@ -20,8 +21,37 @@ import {
   Car,
   Boxes,
 } from "lucide-react";
+import {
+  User,
+  
+  
+  Package,
+  
+  
+} from "lucide-react";
 
 export default function ARBBearingsPage() {
+
+  const gallery = [
+  {
+    title: "Ball Bearings",
+    description:
+      "High-precision ball bearings engineered for smooth rotation, reduced friction, and long-lasting performance across industrial applications.",
+    image: "/bearing333.png",
+  },
+  {
+    title: "Roller Bearings",
+    description:
+      "Heavy-duty roller bearings designed to handle high radial loads while delivering exceptional durability and operational efficiency.",
+    image: "/1.webp",
+  },
+  {
+    title: "Industrial Bearing Solutions",
+    description:
+      "A comprehensive range of premium bearings for automotive, manufacturing, mining, and heavy machinery with reliable performance.",
+    image: "/ab2.png",
+  },
+];
   const [activeTab, setActiveTab] = useState("overview");
 
   return (
@@ -35,9 +65,9 @@ export default function ARBBearingsPage() {
         <div className="border-r border-slate-100">
           <div className="sticky top-24 px-10 py-14">
             <img
-              src="/1.webp"
+              src="/bearing333.png"
               alt="Ball Bearings"
-              className="w-full max-w-md mx-auto lg:mx-0 object-contain"
+              className="w-full max-w-md mx-auto lg:mx-0 object-cover"
             />
 
             <div className="flex gap-3 mt-8">
@@ -263,8 +293,170 @@ export default function ARBBearingsPage() {
       </section>
 
 
-         <section>
-          </section> 
+          <section className="py-11 bg-gradient-to-b from-white to-slate-100">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Heading */}
+        <div className="text-center mb-14">
+          <span className="inline-flex rounded-full bg-[#28186C]/10 px-4 py-1 text-sm font-semibold text-[#28186C]">
+            OUR WORK
+          </span>
+
+          <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-slate-900">
+            Related{" "}
+            <span className="bg-gradient-to-r from-[#28186C] to-red-600 bg-clip-text text-transparent">
+              Products
+            </span>
+          </h2>
+
+          {/* <p className="mt-4 text-slate-500 max-w-2xl mx-auto">
+            Explore some of our latest projects and submit your enquiry. Our
+            experts are ready to help you choose the perfect solution.
+          </p> */}
+        </div>
+
+        <div className="grid lg:grid-cols-5 gap-10 items-center">
+          
+          {/* LEFT GALLERY */}
+          <div className="lg:col-span-3">
+            <div className="flex gap-5 h-[520px]">
+              
+              {gallery.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative group overflow-hidden rounded-3xl transition-all duration-500 w-32 hover:w-full flex-grow"
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
+
+                  <div className="absolute bottom-0 left-0 p-8 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
+                    <h3 className="text-3xl font-bold text-white">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-3 text-white/80 max-w-sm">
+                      Premium industrial equipment designed for efficiency,
+                      reliability, and long-lasting performance.
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT ENQUIRY */}
+          <div className="lg:col-span-2">
+            <div className="relative overflow-hidden rounded-[30px] bg-white shadow-2xl border border-slate-200 p-8">
+              {/* Background Decoration */}
+              <div className="absolute -top-24 -right-24 h-52 w-52 rounded-full bg-[#28186C]/10 blur-3xl" />
+              <div className="absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-red-500/10 blur-3xl" />
+
+              <div className="relative">
+                <span className="inline-flex rounded-full bg-gradient-to-r from-[#28186C] to-red-600  px-4 py-1 text-sm font-semibold text-white">
+                  Quick Enquiry
+                </span>
+
+                <h2 className="mt-5 text-3xl font-bold text-slate-900">
+                  Submit Your Enquiry
+                </h2>
+
+                <p className="mt-2 text-slate-500">
+                  Fill out the form below and our sales team will contact you
+                  shortly.
+                </p>
+
+                <form className="mt-6 space-y-4">
+                  {/* Name */}
+                  <div className="relative">
+                    <User className="absolute left-4 top-4 text-slate-400 w-5 h-5" />
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      className="h-14 w-full rounded-xl border border-slate-200 pl-12 pr-4 outline-none focus:border-[#28186C] focus:ring-2 focus:ring-[#28186C]/20"
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div className="relative">
+                    <Phone className="absolute left-4 top-4 text-slate-400 w-5 h-5" />
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      className="h-14 w-full rounded-xl border border-slate-200 pl-12 pr-4 outline-none focus:border-[#28186C] focus:ring-2 focus:ring-[#28186C]/20"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-4 text-slate-400 w-5 h-5" />
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      className="h-14 w-full rounded-xl border border-slate-200 pl-12 pr-4 outline-none focus:border-[#28186C] focus:ring-2 focus:ring-[#28186C]/20"
+                    />
+                  </div>
+
+                  {/* Product */}
+                  <div className="relative">
+                    <Package className="absolute left-4 top-4 text-slate-400 w-5 h-5" />
+
+                    <select className="h-14 w-full appearance-none rounded-xl border border-slate-200 pl-12 pr-4 outline-none focus:border-[#28186C] focus:ring-2 focus:ring-[#28186C]/20">
+                      <option>Select Product</option>
+                      <option>Ball Bearings</option>
+                     
+                    </select>
+                  </div>
+
+                  {/* Message */}
+                  <div className="relative">
+                    <MessageSquare className="absolute left-4 top-5 text-slate-400 w-5 h-5" />
+
+                    <textarea
+                      rows={3}
+                      placeholder="Write your requirement..."
+                      className="w-full rounded-xl border border-slate-200 pl-12 pr-4 pt-4 outline-none resize-none focus:border-[#28186C] focus:ring-2 focus:ring-[#28186C]/20"
+                    />
+                  </div>
+
+                  <button className="group flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#28186C] to-red-600 font-semibold text-white transition hover:scale-[1.02]">
+                    Submit Enquiry
+                    <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
+                  </button>
+                </form>
+
+                {/* Stats */}
+                {/* <div className="mt-10 grid grid-cols-3 gap-5 border-t pt-8">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-[#28186C]">24/7</h3>
+                    <p className="text-sm text-slate-500">Support</p>
+                  </div>
+
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-[#28186C]">
+                      100%
+                    </h3>
+                    <p className="text-sm text-slate-500">Response</p>
+                  </div>
+
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-[#28186C]">
+                      10K+
+                    </h3>
+                    <p className="text-sm text-slate-500">Customers</p>
+                  </div>
+                </div> */}
+              </div>
+            </div>
+          </div>
+          {/* END RIGHT */}
+        </div>
+      </div>
+    </section>
 
     </div>
   );
