@@ -16,8 +16,8 @@ const brands = [
   "/client/8.png",
   "/client/9.png",
     "/client/10.png",
-      "/client/11.jfif",
-        "/client/12.jfif",
+      "/client/11.webp",
+        "/client/12.webp",
 
 ];
 
