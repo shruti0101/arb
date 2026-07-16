@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronUp } from "lucide-react";
+
 import {
   ChevronDown,
   Menu,
@@ -16,7 +18,7 @@ import { categories } from "@/Data";
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-
+const [aboutOpen, setAboutOpen] = useState(false);
   const closeMenu = () => {
     setActiveMenu(null);
     setMobileOpen(false);
@@ -26,7 +28,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-[999] w-full">
 
 
-      <div className="backdrop-blur-2xl bg-[#081B2E]/90 border-b border-white/10 shadow-[0_15px_40px_rgba(0,0,0,.18)]">
+     <div className="relative z-[200] backdrop-blur-2xl bg-[#081B2E]/90 border-b border-white/10 shadow-[0_15px_40px_rgba(0,0,0,.18)]">
 
         <div className="max-w-[1450px] mx-auto px-5 lg:px-10">
 
@@ -59,12 +61,62 @@ export default function Navbar() {
                 Home
               </Link>
 
-              <Link
-                href="/about-us"
-                className="relative text-[15px] font-semibold text-white transition hover:text-[#ff6a2b]"
-              >
-                About Us
-              </Link>
+         <div
+  className="relative"
+  onMouseEnter={() => setAboutOpen(true)}
+  onMouseLeave={() => setAboutOpen(false)}
+>
+  <button
+    className="flex items-center gap-2 text-[15px] font-semibold text-white transition hover:text-[#ff6a2b]"
+  >
+    About Us
+
+    <ChevronDown
+      size={16}
+      className={`transition-transform duration-300 ${
+        aboutOpen ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+
+  <div
+    className={`absolute left-1/2 top-full z-[300] mt-5 w-72 -translate-x-1/2 transition-all duration-300 ${
+      aboutOpen
+        ? "opacity-100 visible translate-y-0"
+        : "opacity-0 invisible -translate-y-3"
+    }`}
+  >
+    <div className="overflow-hidden rounded-3xl border border-white/10 bg-white shadow-2xl">
+
+      <Link
+        href="/about-us"
+        className="flex items-center  justify-between px-6 py-4 text-[#081B2E] transition hover:bg-gray-50 hover:text-[#ff6a2b]"
+      >
+        About ARB Bearings
+        <ArrowRight size={16} />
+      </Link>
+
+      <Link
+        href="/our-journey"
+        className="flex items-center justify-between px-6 py-4 text-[#081B2E] transition hover:bg-gray-50 hover:text-[#ff6a2b]"
+      >
+        Our Journey
+        <ArrowRight size={16} />
+      </Link>
+
+      <Link
+        href="/our-core-values"
+        className="flex items-center justify-between px-6 py-4 text-[#081B2E] transition hover:bg-gray-50 hover:text-[#ff6a2b]"
+      >
+        Our Core Values
+        <ArrowRight size={16} />
+      </Link>
+
+    
+
+    </div>
+  </div>
+</div>
 
               <Link
                 href="/blogs"
@@ -125,6 +177,8 @@ export default function Navbar() {
                   </p>
 
                 </div>
+
+
 
               </a>
 
@@ -294,7 +348,7 @@ export default function Navbar() {
         {/*  MEGA MENU  */}
 
         {activeMenu && (
-          <div className="absolute left-0 top-full w-full bg-white shadow-[0_30px_80px_rgba(0,0,0,.12)] border-t border-orange-100 z-50">
+          <div className="absolute left-0 top-full w-full bg-white shadow-[0_30px_80px_rgba(0,0,0,.12)] border-t border-orange-100 ">
 
             <div className="max-w-[1450px] mx-auto px-10 py-10">
 

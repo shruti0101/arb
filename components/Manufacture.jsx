@@ -95,6 +95,7 @@ export default function QualityCertification() {
 
 
                {/* Left Content */}
+               
           <div>
             <span className="inline-flex items-center rounded-full    text-sm font-semibold uppercase tracking-widest text-red-600">
               Quality & Certifications
