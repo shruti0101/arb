@@ -108,9 +108,9 @@ export default function ARBBearingsPage() {
             <span className="text-slate-900 font-semibold">Ball Bearings</span>
           </div>
 
-          <h1 className="text-5xl font-bold text-slate-900 mb-5">
-            Ball Bearings
-          </h1>
+          <h2 className="text-5xl font-bold text-slate-900 mb-5">
+          FC10558V
+          </h2>
 
           <p className="text-slate-600 leading-relaxed mb-8 max-w-lg text-[15px]">
             ARB Ball Bearings are engineered using premium-grade chrome steel to
@@ -298,163 +298,209 @@ export default function ARBBearingsPage() {
           <section className="py-11 bg-gradient-to-b from-white to-slate-100">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
-        <div className="text-center mb-14">
-          <span className="inline-flex rounded-full bg-[#28186C]/10 px-4 py-1 text-sm font-semibold text-[#28186C]">
-            OUR WORK
-          </span>
+      <div className="text-center mb-10">
+  <span className="inline-flex rounded-full bg-[#28186C]/10 px-4 py-1 text-sm font-semibold text-[#28186C]">
+    EXPLORE MORE
+  </span>
 
-          <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-slate-900">
-            Related{" "}
-            <span className="bg-gradient-to-r from-[#28186C] to-red-600 bg-clip-text text-transparent">
-              Products
-            </span>
-          </h2>
+  <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-slate-900">
+    Technical Specifications of{" "}
+    <span className="bg-gradient-to-r from-[#28186C] to-red-600 bg-clip-text text-transparent">
+      Bearings
+    </span>
+  </h2>
 
-          {/* <p className="mt-4 text-slate-500 max-w-2xl mx-auto">
-            Explore some of our latest projects and submit your enquiry. Our
-            experts are ready to help you choose the perfect solution.
-          </p> */}
-        </div>
+  <p className="mt-4 text-slate-800 max-w-3xl mx-auto">
+    Explore similar bearing models from the same series with comparable dimensions and performance.
+  </p>
+</div>
 
-        <div className="grid lg:grid-cols-5 gap-10 items-center">
+        <div className="items-center">
           
           {/* LEFT GALLERY */}
-          <div className="lg:col-span-3">
-            <div className="flex gap-5 h-[520px]">
-              
-              {gallery.map((item, index) => (
-                <div
-                  key={index}
-                  className="relative group overflow-hidden rounded-3xl transition-all duration-500 w-32 hover:w-full flex-grow"
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
+       <div className="">
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
+  <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-2xl">
 
-                  <div className="absolute bottom-0 left-0 p-8 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
-                    <h3 className="text-3xl font-bold text-white">
-                      {item.title}
-                    </h3>
+    <div className="bg-gradient-to-r from-[#28186C] to-red-600 px-8 py-6">
 
-                    <p className="mt-3 text-white/80 max-w-sm">
-                      Premium industrial equipment designed for efficiency,
-                      reliability, and long-lasting performance.
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      <span className="inline-block rounded-full bg-white/15 px-4 py-1 text-sm font-medium text-white">
+        Technical Specifications
+      </span>
 
-          {/* RIGHT ENQUIRY */}
-          <div className="lg:col-span-2">
-            <div className="relative overflow-hidden rounded-[30px] bg-white shadow-2xl border border-slate-200 p-8">
-              {/* Background Decoration */}
-              <div className="absolute -top-24 -right-24 h-52 w-52 rounded-full bg-[#28186C]/10 blur-3xl" />
-              <div className="absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-red-500/10 blur-3xl" />
+      <h2 className="mt-3 text-3xl font-bold text-white">
+        FC10558V*
+      </h2>
 
-              <div className="relative">
-                <span className="inline-flex rounded-full bg-gradient-to-r from-[#28186C] to-red-600  px-4 py-1 text-sm font-semibold text-white">
-                  Quick Enquiry
-                </span>
+      <p className="mt-2 text-white/80">
+        Complete dimensional and performance specifications of the bearing.
+      </p>
 
-                <h2 className="mt-5 text-3xl font-bold text-slate-900">
-                  Submit Your Enquiry
-                </h2>
+    </div>
 
-                <p className="mt-2 text-slate-500">
-                  Fill out the form below and our sales team will contact you
-                  shortly.
-                </p>
+    <div className="overflow-x-auto">
 
-                <form className="mt-6 space-y-4">
-                  {/* Name */}
-                  <div className="relative">
-                    <User className="absolute left-4 top-4 text-slate-400 w-5 h-5" />
-                    <input
-                      type="text"
-                      placeholder="Full Name"
-                      className="h-14 w-full rounded-xl border border-slate-200 pl-12 pr-4 outline-none focus:border-[#28186C] focus:ring-2 focus:ring-[#28186C]/20"
-                    />
-                  </div>
+      <table className="min-w-full text-sm">
 
-                  {/* Phone */}
-                  <div className="relative">
-                    <Phone className="absolute left-4 top-4 text-slate-400 w-5 h-5" />
-                    <input
-                      type="tel"
-                      placeholder="Phone Number"
-                      className="h-14 w-full rounded-xl border border-slate-200 pl-12 pr-4 outline-none focus:border-[#28186C] focus:ring-2 focus:ring-[#28186C]/20"
-                    />
-                  </div>
+        <thead>
 
-                  {/* Email */}
-                  <div className="relative">
-                    <Mail className="absolute left-4 top-4 text-slate-400 w-5 h-5" />
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      className="h-14 w-full rounded-xl border border-slate-200 pl-12 pr-4 outline-none focus:border-[#28186C] focus:ring-2 focus:ring-[#28186C]/20"
-                    />
-                  </div>
+          <tr className="bg-[#F4F7FF]">
 
-                  {/* Product */}
-                  <div className="relative">
-                    <Package className="absolute left-4 top-4 text-slate-400 w-5 h-5" />
+            <th
+              colSpan={6}
+              className="border-b border-r px-5 py-4 text-center font-semibold text-[#28186C]"
+            >
+              Boundary Dimensions
+            </th>
 
-                    <select className="h-14 w-full appearance-none rounded-xl border border-slate-200 pl-12 pr-4 outline-none focus:border-[#28186C] focus:ring-2 focus:ring-[#28186C]/20">
-                      <option>Select Product</option>
-                      <option>Ball Bearings</option>
-                     
-                    </select>
-                  </div>
+            <th
+              colSpan={2}
+              className="border-b border-r px-5 py-4 text-center font-semibold text-[#28186C]"
+            >
+              Basic Load Rating
+            </th>
 
-                  {/* Message */}
-                  <div className="relative">
-                    <MessageSquare className="absolute left-4 top-5 text-slate-400 w-5 h-5" />
+            <th
+              colSpan={2}
+              className="border-b border-r px-5 py-4 text-center font-semibold text-[#28186C]"
+            >
+              Limiting Speed
+            </th>
 
-                    <textarea
-                      rows={3}
-                      placeholder="Write your requirement..."
-                      className="w-full rounded-xl border border-slate-200 pl-12 pr-4 pt-4 outline-none resize-none focus:border-[#28186C] focus:ring-2 focus:ring-[#28186C]/20"
-                    />
-                  </div>
+            <th
+              rowSpan={2}
+              className="border-b border-r px-5 py-4 text-center font-semibold text-[#28186C]"
+            >
+              Mass
+            </th>
 
-                  <button className="group flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#28186C] to-red-600 font-semibold text-white transition hover:scale-[1.02]">
-                    Submit Enquiry
-                    <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
-                  </button>
-                </form>
+            <th
+              rowSpan={2}
+              className="border-b px-5 py-4 text-center font-semibold text-[#28186C]"
+            >
+              Bearing No.
+            </th>
 
-                {/* Stats */}
-                {/* <div className="mt-10 grid grid-cols-3 gap-5 border-t pt-8">
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold text-[#28186C]">24/7</h3>
-                    <p className="text-sm text-slate-500">Support</p>
-                  </div>
+          </tr>
 
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold text-[#28186C]">
-                      100%
-                    </h3>
-                    <p className="text-sm text-slate-500">Response</p>
-                  </div>
+          <tr className="bg-slate-50 text-slate-600">
 
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold text-[#28186C]">
-                      10K+
-                    </h3>
-                    <p className="text-sm text-slate-500">Customers</p>
-                  </div>
-                </div> */}
-              </div>
-            </div>
-          </div>
+            {[
+              "d",
+              "D",
+              "T",
+              "B",
+              "C",
+              "r/R",
+              "Dynamic",
+              "Static",
+              "Grease",
+              "Oil",
+            ].map((item) => (
+              <th
+                key={item}
+                className="border-b px-5 py-3 font-semibold whitespace-nowrap"
+              >
+                {item}
+              </th>
+            ))}
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr className="transition hover:bg-blue-50">
+
+            <td className="border-b px-5 py-4 text-center">25</td>
+            <td className="border-b px-5 py-4 text-center">67</td>
+            <td className="border-b px-5 py-4 text-center">40.5</td>
+            <td className="border-b px-5 py-4 text-center">17</td>
+            <td className="border-b px-5 py-4 text-center">39.25</td>
+            <td className="border-b px-5 py-4 text-center">1.5 / 1.1</td>
+
+            <td className="border-b px-5 py-4 text-center font-semibold">
+              72,000
+            </td>
+
+            <td className="border-b px-5 py-4 text-center font-semibold">
+              89,000
+            </td>
+
+            <td className="border-b px-5 py-4 text-center">
+              4,950
+            </td>
+
+            <td className="border-b px-5 py-4 text-center">
+              6,600
+            </td>
+
+            <td className="border-b px-5 py-4 text-center font-semibold">
+              0.686
+            </td>
+
+            <td className="border-b px-5 py-4 text-center">
+
+              <span className="rounded-full bg-[#28186C]/10 px-4 py-1.5 font-semibold text-[#28186C]">
+                FC10558V*
+              </span>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div className="grid grid-cols-4 border-t">
+
+      <div className="p-5 text-center">
+        <p className="text-xs uppercase tracking-wider text-slate-500">
+          Bore
+        </p>
+        <p className="mt-1 text-xl font-bold text-[#28186C]">
+          25 mm
+        </p>
+      </div>
+
+      <div className="border-l p-5 text-center">
+        <p className="text-xs uppercase tracking-wider text-slate-500">
+          Outside
+        </p>
+        <p className="mt-1 text-xl font-bold text-[#28186C]">
+          67 mm
+        </p>
+      </div>
+
+      <div className="border-l p-5 text-center">
+        <p className="text-xs uppercase tracking-wider text-slate-500">
+          Width
+        </p>
+        <p className="mt-1 text-xl font-bold text-[#28186C]">
+          40.5 mm
+        </p>
+      </div>
+
+      <div className="border-l p-5 text-center">
+        <p className="text-xs uppercase tracking-wider text-slate-500">
+          Weight
+        </p>
+        <p className="mt-1 text-xl font-bold text-[#28186C]">
+          0.686 kg
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+      
           {/* END RIGHT */}
         </div>
       </div>
