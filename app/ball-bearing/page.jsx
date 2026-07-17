@@ -164,11 +164,7 @@ export default function ARBBearingsPage() {
               active={activeTab === "overview"}
               onClick={() => setActiveTab("overview")}
             />
-            <TabButton
-              label="TECHNICAL DATA"
-              active={activeTab === "technical"}
-              onClick={() => setActiveTab("technical")}
-            />
+         
             <TabButton
               label="DOWNLOADS"
               active={activeTab === "downloads"}
