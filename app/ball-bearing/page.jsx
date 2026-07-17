@@ -345,8 +345,12 @@ export default function ARBBearingsPage() {
           [" Outer Diameter ( OD)", "67 mm"],
           ["B- Bearing Height", "40.5 mm"],
           [" r- Radius", "17 mm"],
-       
-   
+          ["Basic Load Rating(dynamic)","1100"],
+                ["Basic Load Rating(static)","400"],
+                ["Limiting Speed(Grease)","43000"],
+       ["Limiting Speed(Oil)","50000"],
+         ["Mass","0.006"],
+
         
         
         ].map(([label, value]) => (
