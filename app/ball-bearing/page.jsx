@@ -290,7 +290,7 @@ export default function ARBBearingsPage() {
             </div>
           )}
 
-          <div className="sticky top-24 px-10 py-14"></div>
+          <div className="sticky top-24 px-10 "></div>
         </div>
       </section>
 
@@ -311,7 +311,7 @@ export default function ARBBearingsPage() {
           </p> */}
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-10 items-center">
+        <div className="grid lg:grid-cols-5 gap-5 items-center">
           
           {/* LEFT GALLERY */}
           <div className="lg:col-span-3">
