@@ -73,10 +73,10 @@ export default function ARBBearingsPage() {
 
 
             <div className="flex gap-3 mt-8">
-              <span className="text-[11px] bg-gradient-to-r from-[#28186C] to-red-600 font-semibold tracking-wide border border-slate-300 rounded px-3 py-1.5 text-white">
+              <span className="text-[11px] bg-[#28186C] font-semibold tracking-wide border border-slate-300 rounded px-3 py-1.5 text-white">
                 INDUSTRIAL GRADE
               </span>
-              <span className="text-[11px] font-semibold tracking-wide border border-slate-300 rounded px-3 py-1.5 bg-gradient-to-r from-[#28186C] to-red-600 text-white">
+              <span className="text-[11px] font-semibold tracking-wide border border-slate-300 rounded px-3 py-1.5 bg-[#28186C] text-white">
                 HIGH PRECISION
               </span>
             </div>
@@ -120,7 +120,7 @@ export default function ARBBearingsPage() {
           </p>
 
           {/* Feature cards */}
-          <div className="grid grid-cols-2 gap-4 mb-8 max-w-lg">
+          <div className="grid grid-cols-2 gap-4 mb-8 max-w-lg ">
             <FeatureCard
               icon={<Shield size={18} className="text-red-600" />}
               title="CONTAMINATION PROTECTION"
@@ -145,7 +145,7 @@ export default function ARBBearingsPage() {
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <button className="flex items-center gap-2 bg-gradient-to-r from-[#28186C] to-red-600 hover:scale-105 transition-discrete duration-150 text-white text-sm font-semibold px-6 py-3 rounded-md ">
+            <button className="flex items-center gap-2 bg-[#28186C]  hover:scale-105 transition-discrete duration-150 text-white text-sm font-semibold px-6 py-3 rounded-md ">
               ENQUIRE NOW <ArrowRight size={15} />
             </button>
             {/* <button className="flex items-center gap-2 border border-slate-300 text-sm font-semibold px-6 py-3 rounded-md hover:bg-white transition-colors">
@@ -388,9 +388,7 @@ export default function ARBBearingsPage() {
               <div className="absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-red-500/10 blur-3xl" />
 
               <div className="relative">
-                <span className="inline-flex rounded-full bg-gradient-to-r from-[#28186C] to-red-600  px-4 py-1 text-sm font-semibold text-white">
-                  Quick Enquiry
-                </span>
+              
 
                 <h2 className="mt-5 text-3xl font-bold text-slate-900">
                   Submit Your Enquiry
@@ -454,7 +452,7 @@ export default function ARBBearingsPage() {
                     />
                   </div>
 
-                  <button className="group flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#28186C] to-red-600 font-semibold text-white transition hover:scale-[1.02]">
+                  <button className="group flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#28186C] font-semibold text-white transition hover:scale-[1.02]">
                     Submit Enquiry
                     <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
                   </button>
@@ -497,10 +495,10 @@ function FeatureCard({ icon, title, desc }) {
   return (
     <div className="bg-white border border-slate-200 rounded-md p-4">
       <div className="mb-2">{icon}</div>
-      <div className="text-[11px] font-bold tracking-wide text-slate-900 mb-1">
+      <div className="text-[13px] font-bold tracking-wide text-slate-900 mb-1">
         {title}
       </div>
-      <div className="text-[11px] text-slate-500 leading-relaxed">{desc}</div>
+      <div className="text-[14px] text-slate-800 leading-relaxed">{desc}</div>
     </div>
   );
 }
