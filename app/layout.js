@@ -2,7 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
-
+import { getCategoryTree } from "@/data"
 const poppins = Poppins({
   subsets: ["latin"],
   weight: [
@@ -25,10 +25,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+    const categories = getCategoryTree();
   return (
     <html lang="en" className={`${poppins.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <Navbar />
+       <Navbar categories={categories} />
         {children}
         <Footer />
       </body>
