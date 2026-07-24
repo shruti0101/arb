@@ -29,72 +29,431 @@ export default async function SubCategoryPage({ params }) {
   const loadKeys = getColumnKeys(products, "loadRating");
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10">
-      <nav className="text-sm text-gray-400 mb-2">
-        {category.name} /{" "}
-        <span className="text-gray-700">{subCategory.name}</span>
+
+<>
+{/* Hero */}
+<section className="border-b bg-gradient-to-br from-slate-50 via-white to-blue-50/40">
+  <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-16 lg:grid-cols-[1.2fr_0.8fr]">
+
+    {/* Left */}
+    <div>
+      <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-slate-500">
+        <Link href="/" className="hover:text-[#DA2416]">
+          Home
+        </Link>
+
+        <span>/</span>
+
+        <Link
+          href={`/products/${category.slug}`}
+          className="hover:text-[#DA2416]"
+        >
+          {category.name}
+        </Link>
+
+        <span>/</span>
+
+        <span className="font-medium text-slate-900">
+          {subCategory.name}
+        </span>
       </nav>
 
-      <h1 className="text-2xl font-bold mb-6">
+      <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-[#DA2416]">
+        Industrial Bearings
+      </span>
+
+      <h1 className="mt-6 text-5xl font-bold tracking-tight text-slate-900">
         {subCategory.name}
       </h1>
 
-      <div className="border rounded-xl overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="bg-gray-50 text-left">
-              <th className="p-3 font-semibold border-b whitespace-nowrap">
-                Model
+      <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-600">
+        {subCategory.description ??
+          `Our ${subCategory.name.toLowerCase()} are engineered for
+          demanding industrial applications where reliability,
+          precision, and long service life are essential.`}
+      </p>
+
+      {/* Highlights */}
+      <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        {[
+          "High Load Capacity",
+          "Low Maintenance",
+          "Long Service Life",
+          "Industrial Grade",
+        ].map((item) => (
+          <div
+            key={item}
+            className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-sm"
+          >
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#DA2416] text-white">
+              ✓
+            </div>
+
+            <span className="font-medium text-slate-700">
+              {item}
+            </span>
+          </div>
+        ))}
+      </div>
+
+   
+    </div>
+
+    {/* Right */}
+
+    <div className="relative flex justify-center">
+
+      {/* Background Circle */}
+
+
+      <img
+              src={
+                subCategory.image 
+              }
+              alt={subCategory.name}
+              className="h-full w-full object-contain transition duration-700 group-hover:scale-110"
+            />
+
+      {/* Floating Card */}
+
+      <div className="absolute bottom-0 left-0 rounded-2xl bg-white p-5 shadow-xl">
+        <p className="text-sm text-slate-500">
+          Performance
+        </p>
+
+        <p className="text-3xl font-bold text-[#DA2416]">
+          99.8%
+        </p>
+      </div>
+
+      <div className="absolute right-0 -top-20 rounded-2xl bg-slate-900 px-6 py-5 text-white shadow-xl">
+        <p className="text-xs uppercase tracking-wider text-slate-400">
+          Engineered For
+        </p>
+
+        <p className="mt-2 font-semibold">
+          Heavy Industrial Use
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+  <div className="mx-auto max-w-7xl px-6 py-16">
+  {/* Header */}
+  <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+    <div>
+      <p className="text-sm font-medium uppercase tracking-[0.25em] text-[#DA2416]">
+        Product Catalogue
+      </p>
+
+      <h2 className="mt-2 text-4xl font-bold text-slate-900">
+        {subCategory.name}
+      </h2>
+
+      <p className="mt-3 max-w-2xl text-slate-600">
+        Browse our complete range of{" "}
+        <span className="font-semibold">
+          {subCategory.name.toLowerCase()}
+        </span>{" "}
+        with detailed dimensions and load ratings.
+      </p>
+    </div>
+
+    <div className="rounded-xl border bg-slate-50 px-5 py-3">
+      <p className="text-xs uppercase tracking-wider text-slate-500">
+        Total Products
+      </p>
+
+      <p className="text-3xl font-bold text-slate-900">
+        {products.length}
+      </p>
+    </div>
+  </div>
+
+  {/* Table */}
+  <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
+
+    <div className="overflow-x-auto">
+
+      <table className="min-w-full">
+
+        {/* Header */}
+        <thead className="sticky top-0 z-10 bg-slate-900 text-white">
+
+          <tr>
+
+            <th className="px-6 py-5 text-left text-sm font-semibold uppercase tracking-wider">
+              Model
+            </th>
+
+            {dimensionKeys.map((key) => (
+              <th
+                key={key}
+                className="px-6 py-5 text-left text-sm font-semibold uppercase tracking-wider whitespace-nowrap"
+              >
+                {labelFor(key)}
               </th>
+            ))}
+
+            {loadKeys.map((key) => (
+              <th
+                key={key}
+                className="px-6 py-5 text-left text-sm font-semibold uppercase tracking-wider whitespace-nowrap"
+              >
+                {labelFor(key)}
+              </th>
+            ))}
+
+          </tr>
+
+        </thead>
+
+        {/* Body */}
+        <tbody>
+
+          {products.map((p, index) => (
+
+            <tr
+              key={p.slug}
+              className={`transition hover:bg-blue-50 ${
+                index % 2 === 0 ? "bg-white" : "bg-slate-50/40"
+              }`}
+            >
+
+              {/* Model */}
+
+              <td className="border-b px-6 py-5">
+
+                <Link
+                  href={`/products/${category.slug}/${subCategory.slug}/${p.slug}`}
+                  className="group inline-flex items-center gap-3"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#DA2416]/10 font-bold text-[#DA2416]">
+                    {index + 1}
+                  </div>
+
+                  <div>
+
+                    <p className="font-semibold text-slate-900 group-hover:text-[#DA2416]">
+                      {p.model}
+                    </p>
+
+                    <span className="text-xs text-slate-500">
+                      View Details →
+                    </span>
+
+                  </div>
+
+                </Link>
+
+              </td>
+
+              {/* Dimensions */}
 
               {dimensionKeys.map((key) => (
-                <th
+                <td
                   key={key}
-                  className="p-3 font-semibold border-b whitespace-nowrap"
+                  className="border-b px-6 py-5 text-slate-700 whitespace-nowrap"
                 >
-                  {labelFor(key)}
-                </th>
+                  {p.dimensions?.[key] ?? "—"}
+                </td>
               ))}
+
+              {/* Load */}
 
               {loadKeys.map((key) => (
-                <th
+                <td
                   key={key}
-                  className="p-3 font-semibold border-b whitespace-nowrap"
+                  className="border-b px-6 py-5 text-slate-700 whitespace-nowrap"
                 >
-                  {labelFor(key)}
-                </th>
-              ))}
-            </tr>
-          </thead>
-
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.slug} className="border-b hover:bg-blue-50">
-                <td className="p-3 whitespace-nowrap">
-                  <Link
-                    href={`/products/${category.slug}/${subCategory.slug}/${p.slug}`}
-                    className="text-blue-600 font-medium hover:underline"
-                  >
-                    {p.model}
-                  </Link>
+                  {p.loadRating?.[key] ?? "—"}
                 </td>
+              ))}
 
-                {dimensionKeys.map((key) => (
-                  <td key={key} className="p-3 whitespace-nowrap">
-                    {p.dimensions?.[key] ?? "—"}
-                  </td>
-                ))}
+            </tr>
 
-                {loadKeys.map((key) => (
-                  <td key={key} className="p-3 whitespace-nowrap">
-                    {p.loadRating?.[key] ?? "—"}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+
+        </tbody>
+
+      </table>
+
     </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<section className="bg-slate-50 py-24">
+  <div className="mx-auto max-w-7xl px-6">
+
+    <div className="max-w-5xl">
+      <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#DA2416]">
+        Applications
+      </span>
+
+      <h2 className="mt-3 text-4xl font-bold text-slate-900">
+        Where {subCategory.name} are Used
+      </h2>
+
+      <p className="mt-5 text-lg leading-8 text-slate-600">
+        {subCategory.name} are designed for demanding industrial
+        environments where precision, reliability, and long service life
+        are essential.
+      </p>
+    </div>
+
+    <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      {[
+        {
+        
+          title: "Industrial Machinery",
+          desc: "Used in conveyors, presses, mixers and heavy production equipment."
+        },
+        {
+          title: "Gearboxes",
+          desc: "Ensures smooth power transmission under continuous load."
+        },
+        {
+    
+          title: "Agricultural Equipment",
+          desc: "Reliable operation in harsh outdoor environments."
+        },
+        {
+        
+          title: "Automotive",
+          desc: "Ideal for transmissions, wheel hubs and engine assemblies."
+        },
+        {
+        
+          title: "Pumps & Compressors",
+          desc: "Supports high-speed rotating components with low friction."
+        },
+        {
+         
+          title: "Electric Motors",
+          desc: "Delivers low vibration and long operating life."
+        }
+      ].map((item) => (
+        <div
+          key={item.title}
+          className="rounded-3xl border border-slate-500 bg-white p-6 transition hover:-translate-y-2 hover:shadow-xl"
+        >
+      
+
+          <h3 className=" text-xl font-semibold text-slate-900">
+            {item.title}
+          </h3>
+
+          <p className="mt-4 leading-7 text-slate-600">
+            {item.desc}
+          </p>
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</section>
+
+
+<section className="relative py-14">
+  <div className="mx-auto grid max-w-7xl items-center gap-20 px-6 lg:grid-cols-2">
+
+    {/* Left */}
+
+    <div className="sticky top-30">
+      <img
+        src={subCategory.image}
+        alt={subCategory.name}
+        className="w-full object-contain"
+      />
+    </div>
+
+    {/* Right */}
+
+    <div>
+
+      <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#DA2416]">
+        Why Choose Us
+      </span>
+
+      <h2 className="mt-3 text-4xl font-bold text-slate-900">
+        Key Benefits of {subCategory.name}
+      </h2>
+
+      <p className="mt-6 text-lg leading-8 text-slate-600">
+        Our bearings are engineered to deliver maximum efficiency,
+        reduced downtime, and dependable performance across demanding
+        industrial applications.
+      </p>
+
+      <div className="mt-10 space-y-5">
+
+        {[
+          {
+            title: "Long Service Life",
+            desc: "Manufactured using premium-grade materials for extended operating life."
+          },
+          {
+            title: "Reduced Maintenance",
+            desc: "Optimized internal geometry minimizes wear and lubrication requirements."
+          },
+          {
+            title: "High Precision",
+            desc: "Designed for low vibration and smooth rotation at high speeds."
+          },
+          {
+            title: "Superior Load Capacity",
+            desc: "Handles heavy radial and axial loads with excellent reliability."
+          }
+        ].map((item) => (
+
+          <div
+            key={item.title}
+            className="flex gap-5 rounded-2xl border border-slate-200 p-6 hover:border-[#DA2416]"
+          >
+
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#DA2416] text-white">
+              ✓
+            </div>
+
+            <div>
+
+              <h3 className="text-lg font-semibold text-slate-900">
+                {item.title}
+              </h3>
+
+              <p className="mt-2 leading-7 text-slate-600">
+                {item.desc}
+              </p>
+
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+</>
   );
 }
