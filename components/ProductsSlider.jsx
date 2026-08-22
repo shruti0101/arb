@@ -13,7 +13,7 @@ const products = [
   {
     title: "Taper Roller Bearings",
     desc: "High load capacity, superior durability, ideal for radial & axial loads",
-    image: "/other/tapper.png",
+    image: "/other/tapper1.webp",
     applications: [
       "Electric Motors",
       "Automobiles",
@@ -27,7 +27,7 @@ const products = [
   {
     title: "DAC Bearings",
     desc: "Precision wheel hub bearings, smooth performance, long-lasting reliability",
-    image: "/other/DAC bearing.png",
+    image: "/other/DAC bearing1.webp",
     applications: [
       "Mining Equipment",
       "Steel Plants",
@@ -42,7 +42,7 @@ const products = [
   {
     title: "Spherical Bearings",
     desc: "Self-aligning design, handles misalignment, built for heavy-duty ",
-    image: "/other/spherical.png",
+    image: "/other/spherical1.webp",
     applications: [
       "Mining Equipment",
       "Steel Plants",
@@ -55,7 +55,7 @@ const products = [
   {
     title: "Cylindrical Bearings",
     desc: "High radial load capacity, low friction, excellent for high-speed operations",
-    image: "/other/CYLINDRICAL.png",
+    image: "/other/CYLINDRICAL1.webp",
     applications: [
       "Electric Motors",
       "Automobiles",
@@ -69,7 +69,7 @@ const products = [
   {
     title: "Ball Bearings",
     desc: "Smooth rotation, low friction, reliable performance for versatile applications",
-    image: "/other/ball.png",
+    image: "/other/ball1.webp",
     applications: [
       "Electric Motors",
       "Automobiles",
