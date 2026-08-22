@@ -14,23 +14,21 @@ import Testimonials from "@/components/Testimonial";
 import AboutRussia from "@/components/AboutRussia";
 export default function Home() {
   return (
-<div>
+    <div>
+      <Hero />
+      <ProductsSlider />
+      <Clients />
 
-<Hero/>
-  <ProductsSlider/>
-<Clients/>
-  
-  {/* <Process/> */}
-  <IndustriesSection/>
-<AboutRussia/>
-  <Category/>
-  <Timeline/>
-<About/>
-    <Count/>
-  <Excellence/>
-  {/* <Manufacturing/> */}
-  <Testimonials/>
-
-</div>
+      {/* <Process/> */}
+      <IndustriesSection />
+      <AboutRussia />
+      <Category />
+      <Timeline />
+      <About />
+      <Count />
+      <Excellence />
+      {/* <Manufacturing/> */}
+      <Testimonials />
+    </div>
   );
 }

@@ -17,7 +17,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 
 export default function HeroSection() {
-  const bearingImages = ["/banner/1.png", "/banner/2.png", "/banner/3.png"];
+  const bearingImages = ["/banner/11.webp", "/banner/22.webp", "/banner/33.webp"];
 
   return (
     <section
